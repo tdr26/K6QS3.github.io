@@ -1,17 +1,124 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.65">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — Overview: Motivation, Substrate, and Results</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  :root{--blue:#1F3864;--mid:#2E75B6;--light:#D5E8F0;--eq-bg:#f4f6ff;--note-bg:#fff8e1;--key-bg:#e8f0fe;--pass:#1a7a1a;--open:#c06000}
+  body{font-family:Georgia,serif;max-width:900px;margin:40px auto;padding:0 28px;line-height:1.78;color:#1a1a1a;background:#fafafa}
+  h1{font-size:1.85em;color:var(--blue);border-bottom:3px solid var(--mid);padding-bottom:6px;margin-top:2.2em}
+  h2{font-size:1.28em;color:var(--mid);margin-top:1.8em}
+  h3{font-size:1.1em;color:#404040;font-style:italic;margin-top:1.4em}
+  .title-block{text-align:center;margin-bottom:2em}
+  .title-block h1{border:none;font-size:2.3em}
+  .series{font-size:1em;color:var(--mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3em}
+  .subtitle{font-size:1.3em;color:var(--mid)}
+  .meta{color:#888;margin-top:.4em;font-size:.95em}
+  .abstract{background:#f0f4f8;border-left:4px solid var(--mid);padding:1em 1.5em;margin:1.5em 0}
+  .shared-intro{background:#f7faf7;border-left:4px solid #5a9a5a;padding:1em 1.5em;margin:1.5em 0;border-radius:0 6px 6px 0}
+  .shared-intro h2{margin-top:.5em;color:#2a6a2a}
+  .eq{background:var(--eq-bg);border:1px solid #dde;border-radius:4px;padding:.55em 1.2em;margin:.8em 0 .8em 2em;font-size:.93em;line-height:1.6}
+  .key-result{background:var(--key-bg);border:2px solid var(--mid);border-radius:6px;padding:.8em 1.2em;margin:1em 0;text-align:center;font-weight:bold;color:var(--blue)}
+  .note{background:var(--note-bg);border-left:4px solid #FFC107;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#555}
+  .correction{background:#fff0f0;border-left:4px solid #cc3333;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#600}
+  .paper-links{background:#e8f0fe;border:1px solid var(--mid);border-radius:6px;padding:1em 1.5em;margin:1.5em 0}
+  .paper-links h3{margin-top:.3em;color:var(--blue)}
+  .paper-links a{color:var(--mid);display:block;margin:.3em 0;text-decoration:none;font-size:.97em}
+  .paper-links a:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  th{background:var(--light);text-align:left;padding:7px 10px;font-size:.9em}
+  td{padding:6px 10px;border-bottom:1px solid #ddd;font-size:.9em}
+  tr:nth-child(even){background:#f9f9f9}
+  code{background:#eef;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:.92em}
+  hr{border:none;border-top:2px solid var(--mid);margin:2.5em 0}
+  ul li,ol li{margin:.35em 0}
+  .pass{color:var(--pass);font-weight:bold}
+  .open{color:var(--open)}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin:1em 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">This is a test of the GitHub repository - now modified 4/16/26</span></p>
+<div class="title-block">
+  <div class="series">K6 / QS3 Research Program &nbsp;·&nbsp; Paper 0 of 4</div>
+  <h1>K6 / QS3</h1>
+  <div class="subtitle">Overview: Motivation, Substrate, and Results</div>
+  <div class="meta">April 2026 &nbsp;|&nbsp; DRAFT — Not for distribution without author consent</div>
+</div>
+<hr>
+<div class="paper-links">
+<h3>K6/QS3 Research Program — Paper Series</h3>
+<a href="k6qs3_overview.html">Paper 0 &nbsp;·&nbsp; Overview: Motivation, Substrate, and Results</a>
+<a href="k6qs3_classical_sr.html">Paper 1 &nbsp;·&nbsp; Classical &amp; Special Relativity Validations</a>
+<a href="k6qs3_standard_model.html">Paper 2 &nbsp;·&nbsp; Standard Model Structure and Bell's Inequality</a>
+<a href="k6qs3_alpha_hunt.html">Paper 3 &nbsp;·&nbsp; The Hunt for Alpha: Electromagnetic Coupling from Geometry</a>
+<a href="k6qs3_predictions.html">Paper 4 &nbsp;·&nbsp; Predictions: Quantum Computing, Condensed Matter, and Beyond</a>
+</div>
+
+<div class="abstract">
+<strong>Abstract.</strong> The K6/QS3 framework is a discrete geometric approach to the Standard Model in which gauge symmetries, particle statistics, propagators, and causal structure emerge from the topology and combinatorics of the complete graph K6 and the quaternionic 3-sphere QS3. This paper provides the conceptual overview: the motivation, the substrate, the key structural identifications, and a summary of results verified across classical physics, special relativity, and quantum field theory. Readers are directed to the companion papers for derivations and full numerical verification.
+</div>
+
+<div class="shared-intro">
+<h2>What is K6/QS3?</h2>
+<p>The complete graph K6 — six vertices, every pair connected, 15 edges total — together with the quaternionic 3-sphere QS3 (isomorphic to SU(2)) form the discrete geometric substrate of this research program. Without assuming continuous spacetime and without inserting coupling constants by hand, the gauge symmetries of the Standard Model emerge from this structure: U(1) from the Hopf fibration of QS3, SU(2) from its quaternionic generators, and SU(3) from the K₃,₃ bipartite subgraph. Fermion statistics come from the trefoil knot embedded in K6/QS3, whose braid phase is exactly \(−1\) under particle exchange. The Lorentz group acts through SL(2,\(\mathbb{C}\)) holonomies, with causal structure emerging from the stationary phase of the path sum. All from one finite graph.</p>
+<p>Two free parameters — tube length \(\lambda\) and stiffness \(k\) — are fixed by the electron mass alone. The speed of light emerges as an exact algebraic output. The framework is falsifiable: every claim is a specific numerical prediction to be checked. The papers in this series document the current state of that checking.</p>
+</div>
+
+<h1>1. Motivation</h1>
+<p>The Standard Model has 19 free parameters — coupling constants, masses, mixing angles — that must be measured and inserted by hand. It offers no explanation for why these values are what they are. This program asks a narrower, more tractable question: is there a discrete geometric structure from which the <em>symmetry content</em> of the Standard Model — its gauge groups, its particle taxonomy, its statistics — can be derived as structural necessities rather than assumptions?</p>
+<p>The criterion is strict: each Standard Model ingredient must occupy its geometric home because no other home is available. The framework stands or falls on whether this criterion is met. K6/QS3 is one concrete candidate. Whether it is the unique such structure, or one of a class of structures, is an open question this paper does not settle.</p>
+
+<h1>2. The Substrate at a Glance</h1>
+<h2>2.1 K6: The Complete Graph on Six Vertices</h2>
+<p>K6 has 15 edges and cyclomatic complexity 10 (ten independent cycles). Its automorphism group is S₆ — the unique symmetric group Sₙ (n&gt;2) with an outer automorphism, Out(S₆) = ℤ₂. This outer automorphism swaps K6's 15 edges with its 15 perfect matchings and is identified as the discrete Hodge star — the operator mapping electric to magnetic degrees of freedom. K6 contains the bipartite graph K₃,₃ as a subgraph, which carries SU(3) color.</p>
+<h2>2.2 QS3: The Quaternionic 3-Sphere</h2>
+<p>QS3 is S³ with quaternionic structure, isomorphic to SU(2). The Hopf fibration S³→S² with fiber S¹ provides the U(1) photon sector. Two copies (QS3₁: quarks, QS3₂: leptons) are connected at a wedge point. The trefoil knot in K6/QS3 gives fermion exchange phase −1 — Fermi statistics without the spin-statistics theorem as a separate input.</p>
+<h2>2.3 Gauge Content</h2>
+<table>
+<tr><th>Standard Model Object</th><th>Geometric Home</th><th>Group</th></tr>
+<tr><td>Photon</td><td>Hopf fiber S¹ of QS3</td><td>U(1)</td></tr>
+<tr><td>W+, W−</td><td>Off-diagonal SU(2) generators of QS3</td><td>SU(2)</td></tr>
+<tr><td>Z boson</td><td>Mix of W3 and U(1)_Y</td><td>SU(2)×U(1)</td></tr>
+<tr><td>8 gluons</td><td>K₃,₃ bipartite subgraph</td><td>SU(3)</td></tr>
+<tr><td>Quarks / Leptons</td><td>QS3₁ / QS3₂ excitations</td><td>Color / Colorless</td></tr>
+<tr><td>Fermi statistics</td><td>Trefoil braid phase = −1</td><td>Topological</td></tr>
+<tr><td>EM duality E↔B</td><td>S₆ outer automorphism</td><td>Out(S₆)=ℤ₂</td></tr>
+</table>
+
+<h1>3. The Relay Mechanism</h1>
+<p>Each graph edge is a tube of stiffness \(k\) and length \(a = \lambda l_P\). The discrete wave equation on the relay chain gives exact dispersion \(m\omega^2 = 4k\sin^2(qa/2)\), with UV cutoff at the zone boundary. Two free parameters (\(\lambda, k\)) are fixed by the electron mass alone via three equivalent routes:</p>
+<div class="eq">\[ \lambda = t_C/l_P = E_P/(m_ec^2) = m_P/m_e = 2.389\times10^{22} \qquad k = m_e^3c^4/\hbar^2 \]</div>
+<p>The speed of light follows algebraically:</p>
+<div class="eq">\[ v = a\sqrt{k/m_e} = \frac{\hbar}{m_ec}\cdot\frac{m_ec^2}{\hbar} = c \qquad\text{[exact — every factor cancels]} \]</div>
+<p>The massless relay Green's function is the QED photon propagator \(G_F = -1/(k^2+i\epsilon)\). The Dirac propagator follows from the Weyl spinor structure of QS3.</p>
+
+<h1>4. Causal Structure</h1>
+<p>Each K6 edge carries an SL(2,ℂ) connection \(U = \exp[(\phi-i\theta)\sigma_z/2]\) with phase \(S = -2\sinh(\phi/2)\sin(\theta/2)\). The propagation amplitude sums over all simple paths: \(\mathcal{A} = \sum_p e^{iS(p)}\). The lightcone is the stationary-phase path — no causal structure assigned by hand. Rapidity is exactly additive (verified at machine precision). Thomas precession emerges automatically from \([K_x,K_y] = -J_z\).</p>
+
+<h1>5. Results Summary</h1>
+<table>
+<tr><th>Result</th><th>Value</th><th>Paper</th></tr>
+<tr><td>Speed of light from \(m_e\) alone</td><td>\(v = c\) exactly</td><td>Here</td></tr>
+<tr><td>Hydrogen Bohr spectrum</td><td>0.03% residual (Dirac needed)</td><td>Here</td></tr>
+<tr><td>Rutherford scattering</td><td>\(d\sigma/d\Omega = (Z_1Z_2\alpha\hbar c)^2/(4E)^2/\sin^4(\theta/2)\)</td><td>Paper 1</td></tr>
+<tr><td>Compton wavelength shift</td><td>\(\Delta\lambda = 2\pi a(1-\cos\theta)\), \(\sigma_T = 0.6652\) barn</td><td>Paper 1</td></tr>
+<tr><td>Thomas precession (Wigner angle)</td><td>Machine precision, all axis pairs</td><td>Paper 1</td></tr>
+<tr><td>Mott scattering</td><td>Exchange from trefoil Fermi phase</td><td>Paper 1</td></tr>
+<tr><td>Bell inequality: CHSH</td><td>\(|S| = 2\sqrt{2}\), Hopf \(c_1=1\) obstruction</td><td>Paper 2</td></tr>
+<tr><td>Hodge star weights (4 exact values)</td><td>\(4/3,\; 0.738,\; 0.596,\; 1/4\)</td><td>Paper 3</td></tr>
+<tr><td>Alpha geometric corrections</td><td>37% of required gap, alpha-free</td><td>Paper 3</td></tr>
+<tr><td>Lamb-Dicke \(\eta = 1/\sqrt{2}\)</td><td>Exact, Compton frequency</td><td>Paper 4</td></tr>
+<tr><td>QHE: \(\sigma_H = e^2/h\) from \(c_1=1\)</td><td>von Klitzing constant</td><td>Paper 4</td></tr>
+<tr><td>BH threshold: \(R_S = 2t_C\)</td><td>\(M = m_P^2/m_e\), exact algebraic</td><td>Paper 4</td></tr>
+</table>
+
+<h1>6. Open Problems and Future Work</h1>
+<p>The program's open items divide naturally by timescale. Immediately: temporal Hodge weights and 5-valent vertex junction corrections to close the alpha accounting. Near-term: hydrogen fine structure from the full SL(2,ℂ) path integral. Long-term: proton mass from K₃,₃ loop geometry, quantum computing predictions testable on existing hardware, and the behavior of K6/QS3 at gravitational scales. The most speculative but potentially most significant question is what happens to the K6/QS3 relay structure at the boundary of a black hole — where \(R_S = 2t_C\) suggests a natural transition scale. These directions are documented in Paper 4.</p>
+
+<hr>
+<p style="text-align:center;color:#888;font-size:.88em;">K6/QS3 Research Program &nbsp;|&nbsp; DRAFT — Not for Distribution</p>
 </body>
 </html>
