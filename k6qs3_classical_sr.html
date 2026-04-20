@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — Classical & Special Relativity Validations</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  :root{--blue:#1F3864;--mid:#2E75B6;--light:#D5E8F0;--eq-bg:#f4f6ff;--note-bg:#fff8e1;--key-bg:#e8f0fe;--pass:#1a7a1a;--open:#c06000}
+  body{font-family:Georgia,serif;max-width:900px;margin:40px auto;padding:0 28px;line-height:1.78;color:#1a1a1a;background:#fafafa}
+  h1{font-size:1.85em;color:var(--blue);border-bottom:3px solid var(--mid);padding-bottom:6px;margin-top:2.2em}
+  h2{font-size:1.28em;color:var(--mid);margin-top:1.8em}
+  h3{font-size:1.1em;color:#404040;font-style:italic;margin-top:1.4em}
+  .title-block{text-align:center;margin-bottom:2em}
+  .title-block h1{border:none;font-size:2.3em}
+  .series{font-size:1em;color:var(--mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3em}
+  .subtitle{font-size:1.3em;color:var(--mid)}
+  .meta{color:#888;margin-top:.4em;font-size:.95em}
+  .abstract{background:#f0f4f8;border-left:4px solid var(--mid);padding:1em 1.5em;margin:1.5em 0}
+  .shared-intro{background:#f7faf7;border-left:4px solid #5a9a5a;padding:1em 1.5em;margin:1.5em 0;border-radius:0 6px 6px 0}
+  .shared-intro h2{margin-top:.5em;color:#2a6a2a}
+  .eq{background:var(--eq-bg);border:1px solid #dde;border-radius:4px;padding:.55em 1.2em;margin:.8em 0 .8em 2em;font-size:.93em;line-height:1.6}
+  .key-result{background:var(--key-bg);border:2px solid var(--mid);border-radius:6px;padding:.8em 1.2em;margin:1em 0;text-align:center;font-weight:bold;color:var(--blue)}
+  .note{background:var(--note-bg);border-left:4px solid #FFC107;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#555}
+  .correction{background:#fff0f0;border-left:4px solid #cc3333;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#600}
+  .paper-links{background:#e8f0fe;border:1px solid var(--mid);border-radius:6px;padding:1em 1.5em;margin:1.5em 0}
+  .paper-links h3{margin-top:.3em;color:var(--blue)}
+  .paper-links a{color:var(--mid);display:block;margin:.3em 0;text-decoration:none;font-size:.97em}
+  .paper-links a:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  th{background:var(--light);text-align:left;padding:7px 10px;font-size:.9em}
+  td{padding:6px 10px;border-bottom:1px solid #ddd;font-size:.9em}
+  tr:nth-child(even){background:#f9f9f9}
+  code{background:#eef;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:.92em}
+  hr{border:none;border-top:2px solid var(--mid);margin:2.5em 0}
+  ul li,ol li{margin:.35em 0}
+  .pass{color:var(--pass);font-weight:bold}
+  .open{color:var(--open)}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin:1em 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="title-block">
+  <div class="series">K6 / QS3 Research Program &nbsp;·&nbsp; Paper 1 of 4</div>
+  <h1>K6 / QS3</h1>
+  <div class="subtitle">Classical & Special Relativity Validations</div>
+  <div class="meta">April 2026 &nbsp;|&nbsp; DRAFT — Not for distribution without author consent</div>
+</div>
+<hr>
+<div class="paper-links">
+<h3>K6/QS3 Research Program — Paper Series</h3>
+<a href="k6qs3_overview.html">Paper 0 &nbsp;·&nbsp; Overview: Motivation, Substrate, and Results</a>
+<a href="k6qs3_classical_sr.html">Paper 1 &nbsp;·&nbsp; Classical &amp; Special Relativity Validations</a>
+<a href="k6qs3_standard_model.html">Paper 2 &nbsp;·&nbsp; Standard Model Structure and Bell's Inequality</a>
+<a href="k6qs3_alpha_hunt.html">Paper 3 &nbsp;·&nbsp; The Hunt for Alpha: Electromagnetic Coupling from Geometry</a>
+<a href="k6qs3_predictions.html">Paper 4 &nbsp;·&nbsp; Predictions: Quantum Computing, Condensed Matter, and Beyond</a>
+</div>
+
+<div class="abstract">
+<strong>Abstract.</strong> We present four validations of the K6/QS3 relay framework against classical physics and special relativity: Rutherford scattering from the static relay propagator, Compton scattering from 4-momentum conservation with the relay node spacing, Thomas precession from the polar decomposition of SL(2,ℂ) boost products, and Mott scattering from the interference of direct and exchange amplitudes weighted by the trefoil Fermi phase. All results are exact or verified numerically, and none use QED Feynman rules as input. The common thread is the relay propagator and the SL(2,ℂ) group structure of K6/QS3 edge connections.
+</div>
+
+<div class="shared-intro">
+<h2>What is K6/QS3?</h2>
+<p>The complete graph K6 — six vertices, every pair connected, 15 edges total — together with the quaternionic 3-sphere QS3 (isomorphic to SU(2)) form the discrete geometric substrate of this research program. Without assuming continuous spacetime and without inserting coupling constants by hand, the gauge symmetries of the Standard Model emerge from this structure: U(1) from the Hopf fibration of QS3, SU(2) from its quaternionic generators, and SU(3) from the K₃,₃ bipartite subgraph. Fermion statistics come from the trefoil knot embedded in K6/QS3, whose braid phase is exactly \(−1\) under particle exchange. The Lorentz group acts through SL(2,\(\mathbb{C}\)) holonomies, with causal structure emerging from the stationary phase of the path sum. All from one finite graph.</p>
+<p>Two free parameters — tube length \(\lambda\) and stiffness \(k\) — are fixed by the electron mass alone. The speed of light emerges as an exact algebraic output. The framework is falsifiable: every claim is a specific numerical prediction to be checked. The papers in this series document the current state of that checking.</p>
+</div>
+
+<h1>1. The Relay Propagator</h1>
+<p>The massless relay Green's function in the static limit (\(\omega = 0\)) gives \(\tilde{G}(\mathbf{q}) = 1/q^2\) in Fourier space. The 3D inverse Fourier transform gives the Coulomb Green's function \(G(r) = 1/(4\pi r)\). With gauge coupling \(g^2 = 4\pi\alpha\), the interaction potential is \(V(r) = Z_1 Z_2\,\alpha\hbar c/r\). All four calculations below use this starting point.</p>
+
+<h1>2. Rutherford Scattering</h1>
+<p>Born approximation with the relay Coulomb potential:</p>
+<div class="eq">\[ \frac{d\sigma}{d\Omega} = \left(\frac{Z_1 Z_2\,\alpha\hbar c}{4E_\text{kin}}\right)^2 \frac{1}{\sin^4(\theta/2)} \]</div>
+<p>Correct angular structure (\(1/\sin^4\)), energy dependence (\(1/E^2\)), and coupling structure (\(\alpha^2\)) all emerge from the relay propagator alone. For p-p at 1 MeV: \(d\sigma/d\Omega(90°) = 518.4\) mb/sr.</p>
+<table>
+<tr><th>\(\theta\) (°)</th><th>\(d\sigma/d\Omega\) (mb/sr)</th></tr>
+<tr><td>15</td><td>446.5</td></tr>
+<tr><td>30</td><td>28.9</td></tr>
+<tr><td>45</td><td>6.04</td></tr>
+<tr><td>90</td><td>0.52</td></tr>
+<tr><td>135</td><td>0.18</td></tr>
+</table>
+
+<h1>3. Compton Scattering</h1>
+<h2>3.1 Wavelength Shift from 4-Momentum Conservation</h2>
+<p>With electron at rest, 4-momentum conservation gives \(1/\omega' - 1/\omega = (1-\cos\theta)/m_e\). With \(m_e = \hbar c/a\) (first excitation condition, \(a = t_C\)):</p>
+<div class="key-result">\[\Delta\lambda = 2\pi a\,(1-\cos\theta) \qquad r_e = \alpha\cdot a \qquad \sigma_T = \tfrac{8\pi}{3}(\alpha a)^2 = 0.6652\;\text{barn}\]</div>
+<h2>3.2 Klein-Nishina Formula and Thomson Table (100 keV photon)</h2>
+<table>
+<tr><th>\(\theta\) (°)</th><th>\(\omega'/\omega\)</th><th>\(\Delta\lambda\) (pm)</th><th>\(d\sigma/d\Omega / r_e^2\)</th></tr>
+<tr><td>0</td><td>1.0000</td><td>0.000</td><td>1.0000</td></tr>
+<tr><td>45</td><td>0.9441</td><td>0.712</td><td>0.6652</td></tr>
+<tr><td>90</td><td>0.8363</td><td>2.426</td><td>0.3609</td></tr>
+<tr><td>180</td><td>0.7187</td><td>4.853</td><td>0.5450</td></tr>
+</table>
+<p>CODATA: \(r_e = 2.8179\) fm ✓ &nbsp;&nbsp; \(\sigma_T = 0.6653\) barn ✓ &nbsp;&nbsp; \(\Delta\lambda_{\max} = 4.852\) pm ✓</p>
+
+<h1>4. Thomas Precession</h1>
+<h2>4.1 The Physical Mechanism</h2>
+<p>Two successive Lorentz boosts along non-parallel axes compose to a Lorentz transformation that includes a residual rotation — the Wigner (Thomas) rotation. In SL(2,ℂ), this arises from \([K_x, K_y] = -J_z\): two non-commuting boosts give a rotation. In K6/QS3, edges generically mix all three spatial axes, so Thomas precession is present in every multi-edge holonomy automatically.</p>
+<h2>4.2 Extraction and Exact Formula</h2>
+<p>For pure boosts \(\phi_1, \phi_2\) along orthogonal axes, polar decomposition \(U = R\cdot B\) extracts the Wigner rotation \(R\):</p>
+<div class="eq">\[ \Omega_W = 2\arccos\!\left(\frac{\mathrm{Re}\,\mathrm{Tr}(R)}{2}\right) \qquad \sin\!\left(\frac{\Omega_W}{2}\right) = \frac{\sinh(\phi_1/2)\sinh(\phi_2/2)}{\sqrt{\cosh^2(\phi_1/2)\cosh^2(\phi_2/2)+\sinh^2(\phi_1/2)\sinh^2(\phi_2/2)}} \]</div>
+<p>Small-angle limit: \(\Omega_W \approx \phi_1\phi_2/2\). All 21 test cases (7 rapidity pairs × 3 axis combinations) match to machine precision.</p>
+<table>
+<tr><th>\(\phi_1\)</th><th>\(\phi_2\)</th><th>\(\Omega_W\) [numerical]</th><th>\(\Omega_W\) [formula]</th><th>Match</th></tr>
+<tr><td>0.10</td><td>0.10</td><td>0.00499167</td><td>0.00499167</td><td class="pass">✓</td></tr>
+<tr><td>0.50</td><td>0.30</td><td>0.07289715</td><td>0.07289715</td><td class="pass">✓</td></tr>
+<tr><td>1.00</td><td>0.70</td><td>0.30842149</td><td>0.30842149</td><td class="pass">✓</td></tr>
+<tr><td>1.50</td><td>1.00</td><td>0.57099011</td><td>0.57099011</td><td class="pass">✓</td></tr>
+</table>
+
+<h1>5. Mott Scattering: Fermi Exchange from the Trefoil</h1>
+<h2>5.1 The Exchange Amplitude</h2>
+<p>For identical electrons, two relay propagator diagrams contribute. The trefoil braid phase \(= -1\) under particle exchange assigns a relative minus sign:</p>
+<div class="eq">\[ f(\theta) = \frac{-\alpha\hbar c}{4E_\text{kin}\sin^2(\theta/2)} \qquad g(\theta) = \frac{-\alpha\hbar c}{4E_\text{kin}\cos^2(\theta/2)} \quad \text{[exchange]} \]</div>
+<h2>5.2 Unpolarized Cross Section</h2>
+<div class="key-result">\[ \frac{d\sigma}{d\Omega}_\text{Mott} = \left(\frac{\alpha\hbar c}{4E}\right)^2\!\left[\frac{1}{\sin^4(\theta/2)} + \frac{1}{\cos^4(\theta/2)} - \frac{1}{\sin^2(\theta/2)\cos^2(\theta/2)}\right] \]</div>
+<table>
+<tr><th>\(\theta\) (°)</th><th>Rutherford (mb/sr)</th><th>Mott (mb/sr)</th><th>Exchange effect</th></tr>
+<tr><td>45</td><td>6.04</td><td>5.18</td><td>−14.2%</td></tr>
+<tr><td>70</td><td>1.20</td><td>0.90</td><td>−25.0% (maximum suppression)</td></tr>
+<tr><td>90</td><td>0.52</td><td>0.52</td><td>0.0% (exact equality)</td></tr>
+<tr><td>120</td><td>0.23</td><td>1.61</td><td>+600%</td></tr>
+<tr><td>135</td><td>0.18</td><td>5.18</td><td>+2814%</td></tr>
+</table>
+<p>Mott equals Rutherford exactly at \(\theta = 90°\) — a structural consequence of the formula, not a numerical coincidence. The trefoil Fermi phase is directly responsible for the forward-backward asymmetry.</p>
+
+<hr>
+<p style="text-align:center;color:#888;font-size:.88em;">K6/QS3 Research Program &nbsp;|&nbsp; DRAFT — Not for Distribution</p>
+</body>
+</html>

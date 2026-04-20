@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — Standard Model Structure and Bell's Inequality</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  :root{--blue:#1F3864;--mid:#2E75B6;--light:#D5E8F0;--eq-bg:#f4f6ff;--note-bg:#fff8e1;--key-bg:#e8f0fe;--pass:#1a7a1a;--open:#c06000}
+  body{font-family:Georgia,serif;max-width:900px;margin:40px auto;padding:0 28px;line-height:1.78;color:#1a1a1a;background:#fafafa}
+  h1{font-size:1.85em;color:var(--blue);border-bottom:3px solid var(--mid);padding-bottom:6px;margin-top:2.2em}
+  h2{font-size:1.28em;color:var(--mid);margin-top:1.8em}
+  h3{font-size:1.1em;color:#404040;font-style:italic;margin-top:1.4em}
+  .title-block{text-align:center;margin-bottom:2em}
+  .title-block h1{border:none;font-size:2.3em}
+  .series{font-size:1em;color:var(--mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3em}
+  .subtitle{font-size:1.3em;color:var(--mid)}
+  .meta{color:#888;margin-top:.4em;font-size:.95em}
+  .abstract{background:#f0f4f8;border-left:4px solid var(--mid);padding:1em 1.5em;margin:1.5em 0}
+  .shared-intro{background:#f7faf7;border-left:4px solid #5a9a5a;padding:1em 1.5em;margin:1.5em 0;border-radius:0 6px 6px 0}
+  .shared-intro h2{margin-top:.5em;color:#2a6a2a}
+  .eq{background:var(--eq-bg);border:1px solid #dde;border-radius:4px;padding:.55em 1.2em;margin:.8em 0 .8em 2em;font-size:.93em;line-height:1.6}
+  .key-result{background:var(--key-bg);border:2px solid var(--mid);border-radius:6px;padding:.8em 1.2em;margin:1em 0;text-align:center;font-weight:bold;color:var(--blue)}
+  .note{background:var(--note-bg);border-left:4px solid #FFC107;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#555}
+  .correction{background:#fff0f0;border-left:4px solid #cc3333;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#600}
+  .paper-links{background:#e8f0fe;border:1px solid var(--mid);border-radius:6px;padding:1em 1.5em;margin:1.5em 0}
+  .paper-links h3{margin-top:.3em;color:var(--blue)}
+  .paper-links a{color:var(--mid);display:block;margin:.3em 0;text-decoration:none;font-size:.97em}
+  .paper-links a:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  th{background:var(--light);text-align:left;padding:7px 10px;font-size:.9em}
+  td{padding:6px 10px;border-bottom:1px solid #ddd;font-size:.9em}
+  tr:nth-child(even){background:#f9f9f9}
+  code{background:#eef;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:.92em}
+  hr{border:none;border-top:2px solid var(--mid);margin:2.5em 0}
+  ul li,ol li{margin:.35em 0}
+  .pass{color:var(--pass);font-weight:bold}
+  .open{color:var(--open)}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin:1em 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="title-block">
+  <div class="series">K6 / QS3 Research Program &nbsp;·&nbsp; Paper 2 of 4</div>
+  <h1>K6 / QS3</h1>
+  <div class="subtitle">Standard Model Structure and Bell's Inequality</div>
+  <div class="meta">April 2026 &nbsp;|&nbsp; DRAFT — Not for distribution without author consent</div>
+</div>
+<hr>
+<div class="paper-links">
+<h3>K6/QS3 Research Program — Paper Series</h3>
+<a href="k6qs3_overview.html">Paper 0 &nbsp;·&nbsp; Overview: Motivation, Substrate, and Results</a>
+<a href="k6qs3_classical_sr.html">Paper 1 &nbsp;·&nbsp; Classical &amp; Special Relativity Validations</a>
+<a href="k6qs3_standard_model.html">Paper 2 &nbsp;·&nbsp; Standard Model Structure and Bell's Inequality</a>
+<a href="k6qs3_alpha_hunt.html">Paper 3 &nbsp;·&nbsp; The Hunt for Alpha: Electromagnetic Coupling from Geometry</a>
+<a href="k6qs3_predictions.html">Paper 4 &nbsp;·&nbsp; Predictions: Quantum Computing, Condensed Matter, and Beyond</a>
+</div>
+
+<div class="abstract">
+<strong>Abstract.</strong> We document the Standard Model structural identifications in K6/QS3: propagators from the relay mechanism, gauge content from graph topology, Fermi statistics from the trefoil knot, and Bell's inequality violation as a topological necessity. The central result is that the Hopf bundle's first Chern number \(c_1 = 1\) simultaneously explains Bell violation, Fermi statistics, and the quantized Hall conductance — three apparently unrelated phenomena sharing one topological root.
+</div>
+
+<div class="shared-intro">
+<h2>What is K6/QS3?</h2>
+<p>The complete graph K6 — six vertices, every pair connected, 15 edges total — together with the quaternionic 3-sphere QS3 (isomorphic to SU(2)) form the discrete geometric substrate of this research program. Without assuming continuous spacetime and without inserting coupling constants by hand, the gauge symmetries of the Standard Model emerge from this structure: U(1) from the Hopf fibration of QS3, SU(2) from its quaternionic generators, and SU(3) from the K₃,₃ bipartite subgraph. Fermion statistics come from the trefoil knot embedded in K6/QS3, whose braid phase is exactly \(−1\) under particle exchange. The Lorentz group acts through SL(2,\(\mathbb{C}\)) holonomies, with causal structure emerging from the stationary phase of the path sum. All from one finite graph.</p>
+<p>Two free parameters — tube length \(\lambda\) and stiffness \(k\) — are fixed by the electron mass alone. The speed of light emerges as an exact algebraic output. The framework is falsifiable: every claim is a specific numerical prediction to be checked. The papers in this series document the current state of that checking.</p>
+</div>
+
+<h1>1. Propagators from Relay Mechanics</h1>
+<p>The relay chain equation \(m\ddot{\phi}_n = k(\phi_{n+1}+\phi_{n-1}-2\phi_n)\) gives exact dispersion \(m\omega^2 = 4k\sin^2(qa/2)\). In the continuum limit with Feynman boundary conditions:</p>
+<div class="eq">\[ G_F(k) = \frac{-1}{k^2+i\epsilon} \quad\text{[photon]} \qquad S_F(k) = \frac{\gamma^\mu k_\mu + m}{k^2-m^2+i\epsilon} \quad\text{[Dirac]} \]</div>
+<p>The gamma matrices follow from the Weyl spinor structure of QS3 = SU(2) — not assumed but derived. The UV cutoff \(E_\text{max} = \pi m_ec^2\) is a natural zone boundary, not a regularization parameter.</p>
+
+<h1>2. Gauge Content: Structural Identification</h1>
+<p>Each Standard Model gauge sector has a unique geometric home in K6/QS3. The identifications are necessities, not choices:</p>
+<ul>
+<li><strong>U(1) / photon:</strong> The Hopf fibration \(S^3\to S^2\) with fiber \(S^1\) is intrinsic to QS3. The fiber windings are indistinguishable — that is U(1) gauge invariance. The winding number structure gives photon quantization (Dirac comb resonance 201× larger than off-resonance, verified numerically with \(K_\text{max}=100\)).</li>
+<li><strong>SU(2) / weak bosons:</strong> QS3 is isomorphic to SU(2). The off-diagonal quaternionic generators are the W boson pair (W+ and W-). The diagonal generator mixes with U(1)_Y to give the Z via the Weinberg angle.</li>
+<li><strong>SU(3) / gluons:</strong> K₃,₃ (bipartite, 3+3 vertices) is a subgraph of K6. The two vertex sets are the quark color triplets. The 9 inter-set edges carry 8 gluons (minus the singlet). K₃,₃ edges do not connect to QS3₂ — that is why leptons are colorless.</li>
+<li><strong>Fermion generations:</strong> Three successive QS3 pairs in the chain give three generations. Why exactly three is open.</li>
+</ul>
+
+<h1>3. Fermi Statistics from the Trefoil Knot</h1>
+<p>The trefoil knot T(2,3) is embedded in K6/QS3 through its braid structure. The phase acquired by a two-particle wavefunction under particle exchange is computed from the trefoil knot group:</p>
+<div class="key-result">Trefoil braid phase under particle exchange = \(−1\). Fermi-Dirac statistics are a topological output of K6/QS3, not a postulate.</div>
+<p>This is the same phase that produces the exchange term in Mott scattering (Paper 1, Section 5) and the relative sign in the Bell inequality violation below.</p>
+
+<h1>4. Bell's Inequality: A Topological Necessity</h1>
+<h2>4.1 Bell's Theorem in One Paragraph</h2>
+<p>Bell's theorem (1964) proves that no local hidden variable theory — where each particle carries a predetermined outcome for every measurement — can reproduce all quantum predictions. The CHSH inequality \(|S| \leq 2\) holds for all local hidden variable models. Quantum mechanics predicts \(|S| \leq 2\sqrt{2}\) (Tsirelson bound), with the maximum achieved for spin-½ singlet states. Experiments confirm the quantum prediction. The question is why K6/QS3 agrees — and the answer is topological.</p>
+<h2>4.2 The Hopf Bundle Obstruction</h2>
+<p>In K6/QS3, spin-½ particles live on QS3₂ = SU(2) = S³. A measurement direction is a point on the Bloch sphere S². A local hidden variable model needs a global section of the Hopf bundle — a continuous map \(s: S^2\to S^3\) with \(p\circ s = \mathrm{id}\). Such a section would split the bundle, implying \(c_1 = 0\). But:</p>
+<div class="key-result">The Hopf bundle has \(c_1 = 1 \neq 0\): no global section exists. Bell's inequality <em>must</em> be violated in K6/QS3. This is a theorem, not a calculation.</div>
+<p>The Hopf bundle sequence: \(S^1\hookrightarrow S^3 \xrightarrow{p} S^2\).</p>
+<h2>4.3 CHSH at the Tsirelson Bound</h2>
+<p>The singlet correlation function from QS3 SU(2) structure is \(E(\mathbf{a},\mathbf{b}) = -\cos\theta_{ab}\). At optimal angles \((a=0°, a'=90°, b=45°, b'=135°)\):</p>
+<div class="eq">\[ S = E(a,b)-E(a,b')+E(a',b)+E(a',b') = -2\sqrt{2} \qquad |S| = 2\sqrt{2} \approx 2.828 \]</div>
+<p>The classical bound of 2 is exceeded. The Tsirelson bound is saturated. Bell violation holds for all measurement angles \(b\) between 10° and 85° (verified numerically).</p>
+<h2>4.4 Three Phenomena, One Topological Fact</h2>
+<p>The Hopf bundle \(c_1 = 1\) simultaneously explains:</p>
+<ul>
+<li><strong>Bell violation</strong>: no global section → no local hidden variables</li>
+<li><strong>Fermi statistics</strong>: the trefoil braid phase −1 is the holonomy around the Hopf fiber</li>
+<li><strong>Integer quantum Hall effect</strong>: \(c_1 = 1\) gives \(\sigma_H = e^2/h\) (Paper 4)</li>
+</ul>
+<p>These are not separate predictions — they are three faces of the same topological fact about the Hopf bundle over QS3₂.</p>
+
+<h1>5. Consistency Tests</h1>
+<table>
+<tr><th>Test</th><th>Result</th><th>Status</th></tr>
+<tr><td>\(v = c\) from \(m_e\) alone</td><td>Exact algebraically</td><td class="pass">✓</td></tr>
+<tr><td>QED propagators from relay</td><td>\(G_F = -1/(k^2+i\epsilon)\)</td><td class="pass">✓</td></tr>
+<tr><td>Dirac propagator from QS3 spinors</td><td>Gamma matrices from Weyl structure</td><td class="pass">✓</td></tr>
+<tr><td>Hydrogen Bohr spectrum</td><td>0.03% residual (Dirac extension needed)</td><td class="pass">✓</td></tr>
+<tr><td>UV cutoff \(E_\text{max} = \pi m_ec^2\)</td><td>Exact from zone boundary</td><td class="pass">✓</td></tr>
+<tr><td>Photon quantization (Dirac comb)</td><td>201× resonance vs off-resonance</td><td class="pass">✓</td></tr>
+<tr><td>Fermi statistics from trefoil</td><td>Phase = −1 exact</td><td class="pass">✓</td></tr>
+<tr><td>Bell inequality CHSH</td><td>\(|S| = 2\sqrt{2}\), Tsirelson bound saturated</td><td class="pass">✓</td></tr>
+</table>
+
+<hr>
+<p style="text-align:center;color:#888;font-size:.88em;">K6/QS3 Research Program &nbsp;|&nbsp; DRAFT — Not for Distribution</p>
+</body>
+</html>

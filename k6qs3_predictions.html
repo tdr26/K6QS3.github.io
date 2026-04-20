@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — Predictions: Quantum Computing, Condensed Matter, and Beyond</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  :root{--blue:#1F3864;--mid:#2E75B6;--light:#D5E8F0;--eq-bg:#f4f6ff;--note-bg:#fff8e1;--key-bg:#e8f0fe;--pass:#1a7a1a;--open:#c06000}
+  body{font-family:Georgia,serif;max-width:900px;margin:40px auto;padding:0 28px;line-height:1.78;color:#1a1a1a;background:#fafafa}
+  h1{font-size:1.85em;color:var(--blue);border-bottom:3px solid var(--mid);padding-bottom:6px;margin-top:2.2em}
+  h2{font-size:1.28em;color:var(--mid);margin-top:1.8em}
+  h3{font-size:1.1em;color:#404040;font-style:italic;margin-top:1.4em}
+  .title-block{text-align:center;margin-bottom:2em}
+  .title-block h1{border:none;font-size:2.3em}
+  .series{font-size:1em;color:var(--mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3em}
+  .subtitle{font-size:1.3em;color:var(--mid)}
+  .meta{color:#888;margin-top:.4em;font-size:.95em}
+  .abstract{background:#f0f4f8;border-left:4px solid var(--mid);padding:1em 1.5em;margin:1.5em 0}
+  .shared-intro{background:#f7faf7;border-left:4px solid #5a9a5a;padding:1em 1.5em;margin:1.5em 0;border-radius:0 6px 6px 0}
+  .shared-intro h2{margin-top:.5em;color:#2a6a2a}
+  .eq{background:var(--eq-bg);border:1px solid #dde;border-radius:4px;padding:.55em 1.2em;margin:.8em 0 .8em 2em;font-size:.93em;line-height:1.6}
+  .key-result{background:var(--key-bg);border:2px solid var(--mid);border-radius:6px;padding:.8em 1.2em;margin:1em 0;text-align:center;font-weight:bold;color:var(--blue)}
+  .note{background:var(--note-bg);border-left:4px solid #FFC107;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#555}
+  .correction{background:#fff0f0;border-left:4px solid #cc3333;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#600}
+  .paper-links{background:#e8f0fe;border:1px solid var(--mid);border-radius:6px;padding:1em 1.5em;margin:1.5em 0}
+  .paper-links h3{margin-top:.3em;color:var(--blue)}
+  .paper-links a{color:var(--mid);display:block;margin:.3em 0;text-decoration:none;font-size:.97em}
+  .paper-links a:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  th{background:var(--light);text-align:left;padding:7px 10px;font-size:.9em}
+  td{padding:6px 10px;border-bottom:1px solid #ddd;font-size:.9em}
+  tr:nth-child(even){background:#f9f9f9}
+  code{background:#eef;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:.92em}
+  hr{border:none;border-top:2px solid var(--mid);margin:2.5em 0}
+  ul li,ol li{margin:.35em 0}
+  .pass{color:var(--pass);font-weight:bold}
+  .open{color:var(--open)}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin:1em 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="title-block">
+  <div class="series">K6 / QS3 Research Program &nbsp;·&nbsp; Paper 4 of 4</div>
+  <h1>K6 / QS3</h1>
+  <div class="subtitle">Predictions: Quantum Computing, Condensed Matter, and Beyond</div>
+  <div class="meta">April 2026 &nbsp;|&nbsp; DRAFT — Not for distribution without author consent</div>
+</div>
+<hr>
+<div class="paper-links">
+<h3>K6/QS3 Research Program — Paper Series</h3>
+<a href="k6qs3_overview.html">Paper 0 &nbsp;·&nbsp; Overview: Motivation, Substrate, and Results</a>
+<a href="k6qs3_classical_sr.html">Paper 1 &nbsp;·&nbsp; Classical &amp; Special Relativity Validations</a>
+<a href="k6qs3_standard_model.html">Paper 2 &nbsp;·&nbsp; Standard Model Structure and Bell's Inequality</a>
+<a href="k6qs3_alpha_hunt.html">Paper 3 &nbsp;·&nbsp; The Hunt for Alpha: Electromagnetic Coupling from Geometry</a>
+<a href="k6qs3_predictions.html">Paper 4 &nbsp;·&nbsp; Predictions: Quantum Computing, Condensed Matter, and Beyond</a>
+</div>
+
+<div class="abstract">
+<strong>Abstract.</strong> A framework earns credibility through predictions. We present five specific numerical predictions from K6/QS3, each derivable from the framework's topology without additional assumptions: the Lamb-Dicke parameter \(\eta = 1/\sqrt{2}\) at the Compton frequency (relevant to trapped-ion quantum simulation), the quantized Hall conductance \(\sigma_H = e^2/h\) from the Hopf Chern number \(c_1 = 1\), the K6 MAX-CUT ground state as the natural quantum annealing target, the black hole threshold mass \(M = m_P^2/m_e\) at which the Schwarzschild radius equals exactly 2 relay node spacings (\(R_S = 2t_C\)), and a K6/QS3 topological qubit protected by the energy gap \(E_\text{gap} = m_ec^2\). We also outline directions for future predictions in condensed matter, quantum computing, and gravitational physics.
+</div>
+
+<div class="shared-intro">
+<h2>What is K6/QS3?</h2>
+<p>The complete graph K6 — six vertices, every pair connected, 15 edges total — together with the quaternionic 3-sphere QS3 (isomorphic to SU(2)) form the discrete geometric substrate of this research program. Without assuming continuous spacetime and without inserting coupling constants by hand, the gauge symmetries of the Standard Model emerge from this structure: U(1) from the Hopf fibration of QS3, SU(2) from its quaternionic generators, and SU(3) from the K₃,₃ bipartite subgraph. Fermion statistics come from the trefoil knot embedded in K6/QS3, whose braid phase is exactly \(−1\) under particle exchange. The Lorentz group acts through SL(2,\(\mathbb{C}\)) holonomies, with causal structure emerging from the stationary phase of the path sum. All from one finite graph.</p>
+<p>Two free parameters — tube length \(\lambda\) and stiffness \(k\) — are fixed by the electron mass alone. The speed of light emerges as an exact algebraic output. The framework is falsifiable: every claim is a specific numerical prediction to be checked. The papers in this series document the current state of that checking.</p>
+</div>
+
+<h1>1. Why Predictions Matter</h1>
+<p>Internal consistency and agreement with known physics are necessary but not sufficient. A framework that only reproduces what is already known is a restatement, not a discovery. The predictions in this paper are falsifiable: they specify exact numbers that either will or will not be observed. If they are confirmed, the K6/QS3 framework gains credibility. If they fail, the framework must be revised or abandoned. That is the correct scientific posture.</p>
+<p>All five predictions follow from identifiable geometric properties of K6/QS3 — none require free parameters beyond those already fixed by the electron mass.</p>
+
+<h1>2. Prediction 1: Lamb-Dicke Parameter \(\eta = 1/\sqrt{2}\)</h1>
+<h2>2.1 Background</h2>
+<p>In trapped-ion quantum computing, the Lamb-Dicke parameter \(\eta = k_\text{laser}\sqrt{\hbar/(2M\omega_\text{trap})}\) controls the coupling between a ion's spin (internal) and motional (external) degrees of freedom. Small \(\eta\) (Lamb-Dicke regime) means the laser barely couples to motional modes; large \(\eta\) means strong coupling with multi-phonon processes. Current trapped-ion experiments operate with \(\eta \approx 0.05\text{--}0.15\).</p>
+<h2>2.2 The K6/QS3 Prediction</h2>
+<p>Identifying the trap frequency with the relay oscillator frequency (\(\omega_\text{trap} = \omega_0 = m_ec^2/\hbar\)) and the photon wavenumber with the inverse Compton wavelength (\(k = 1/t_C\)):</p>
+<div class="eq">\[ \eta_{K6} = \frac{1}{t_C}\sqrt{\frac{\hbar}{2m_e\omega_0}} = \sqrt{\frac{E_\text{recoil}}{E_\text{relay}}} = \sqrt{\frac{m_ec^2/2}{m_ec^2}} = \frac{1}{\sqrt{2}} \]</div>
+<div class="key-result">At the Compton frequency, the K6/QS3 relay has Lamb-Dicke parameter \(\eta = 1/\sqrt{2}\) exactly. This is the boundary of the Lamb-Dicke regime and is the natural scale for quantum simulation of relativistic field theories on trapped-ion hardware.</div>
+<p>\(\eta = 1/\sqrt{2} \approx 0.707\) is in the regime where multi-phonon processes are important and the rotating wave approximation breaks down. This is not a weakness — it is precisely where quantum simulation of strongly-coupled field theories (like those in the K6/QS3 framework) becomes relevant. An experiment operating at \(\omega_\text{trap} \approx 10^{20}\) rad/s (if achievable) would test this directly.</p>
+
+<h1>3. Prediction 2: Integer Quantum Hall Effect from \(c_1 = 1\)</h1>
+<p>The Hopf bundle over QS3 has first Chern number \(c_1 = 1\). In the condensed matter context, the Chern number of a filled energy band gives the quantized Hall conductance in units of \(e^2/h\):</p>
+<div class="eq">\[ \sigma_H = c_1 \cdot \frac{e^2}{h} = \frac{1}{R_K} = \frac{1}{25812.807\;\Omega} \]</div>
+<div class="key-result">The K6/QS3 Hopf bundle predicts quantized Hall conductance \(\sigma_H = e^2/h\) — the integer quantum Hall effect at filling factor \(\nu = 1\).</div>
+<p>The von Klitzing constant \(R_K = h/e^2 = 25812.807\) Ω is one of the most precisely measured constants in physics. The K6/QS3 framework gives the correct value because \(c_1 = 1\) is exact — a topological integer, not an approximation. This connects to the Bell inequality violation (same \(c_1 = 1\) prevents local hidden variables) and the Fermi statistics (same Hopf topology gives trefoil braid phase −1). Three phenomena, one topological fact.</p>
+<p><strong>Experimental test:</strong> A 2D electron gas governed by the K6/QS3 lepton sector (QS3₂) in a perpendicular magnetic field should exhibit the QHE plateau at \(R_H = R_K\) for filling factor \(\nu = 1\). This is already confirmed in standard QHE experiments — the prediction is that the K6/QS3 Chern number \(c_1 = 1\) is the correct topological explanation.</p>
+
+<h1>4. Prediction 3: K6 MAX-CUT as Quantum Annealing Ground State</h1>
+<p>The MAX-CUT problem on a graph asks for the partition of vertices into two sets maximizing the number of edges between sets. For K6 (complete graph on 6 vertices), the maximum cut has \(\lfloor 6^2/4\rfloor = 9\) edges.</p>
+<div class="key-result">The K6 MAX-CUT ground state is exactly the QS3₁/QS3₂ bipartition: the 9 K₃,₃ inter-group edges are the cut edges. A quantum annealer programmed with the K6 coupling matrix should find this ground state with the Hodge weights (★ = 4/3 for diagonal K₃,₃, ★ = 0.738 for off-diagonal) as natural annealing coefficients.</div>
+<p>The 10 independent cycles of K6 map to the constraint satisfaction structure of the annealing Hamiltonian. The frustration structure (non-zero energy loops) corresponds exactly to the independent cycles that carry the Lorentz holonomies. <strong>This is a concrete test on existing quantum annealing hardware</strong> (D-Wave, or gate-based QAOA circuits): program the K6 adjacency matrix with the computed Hodge weights as coupling strengths, and verify that the annealer preferentially finds the QS3₁/QS3₂ bipartition ground state.</p>
+
+<h1>5. Prediction 4: Black Hole Threshold — \(R_S = 2t_C\)</h1>
+<h2>5.1 The Exact Result</h2>
+<p>At what mass does a black hole's Schwarzschild radius equal twice the relay node spacing? Setting \(R_S = 2GM/c^2 = 2t_C\):</p>
+<div class="eq">\[ M_\text{threshold} = \frac{m_P^2}{m_e} \qquad R_S = \frac{2GM_\text{threshold}}{c^2} = 2t_C \quad\text{[exact, algebraic]} \]</div>
+<p>Proof: \(R_S = 2G(m_P^2/m_e)/c^2 = 2(\hbar c/G)(G/(m_ec^2)) = 2\hbar/(m_ec) = 2t_C\). Every factor cancels.</p>
+<p>Numerically: \(M_\text{threshold} = 5.2\times10^{14}\) kg (mass of a large asteroid), \(R_S = 7.72\times10^{-13}\) m \(= 2t_C\).</p>
+<h2>5.2 Physical Interpretation</h2>
+<div class="key-result">The K6/QS3 quantum gravity transition occurs at \(M = m_P^2/m_e\), where \(R_S = 2t_C\) — the Schwarzschild radius equals 2 relay node spacings. Below this mass, the relay lattice resolves the black hole interior. Above it, the lattice is too coarse.</div>
+<p>This is not the Planck mass (\(m_P \approx 2.2\times10^{-8}\) kg) — it is the geometric mean hierarchy scale \(m_P^2/m_e \approx 5.2\times10^{14}\) kg. The UV cutoff of the relay lattice (\(E_\text{max} = \pi m_ec^2 = 1.6\) MeV) sets the minimum resolvable length \(t_C/\pi\). A black hole becomes "opaque" to the K6/QS3 relay when its Schwarzschild radius falls below this scale — which happens at \(M_\text{threshold}\).</p>
+<p>This mass scale has an interesting property: \(M_\text{threshold} = \lambda^2 m_e = (m_P/m_e)^2 m_e = m_P \cdot (m_P/m_e)\). It is \(\lambda = 2.389\times10^{22}\) times the electron mass — the same dimensionless hierarchy parameter that appears in the Option D calibration. The black hole threshold and the calibration hierarchy are the same number.</p>
+
+<h1>6. Prediction 5: Topological Qubit with Energy Gap \(E_\text{gap} = m_ec^2\)</h1>
+<p>The Hopf fiber S¹ on QS3 supports winding modes. The ground state (winding number 0) and first excited state (winding number 1) define a natural qubit. The energy gap is the relay oscillator frequency:</p>
+<div class="eq">\[ E_\text{gap} = \hbar\omega_0 = m_ec^2 = 510.999\;\text{keV} \qquad T_\text{gap} = E_\text{gap}/k_B \approx 5.93\times10^9\;\text{K} \]</div>
+<p>Topological protection: to flip the qubit (change winding number), a perturbation must complete a full loop of the Hopf fiber. Small local perturbations cannot do this — protection is exponential in \(E_\text{gap}/k_BT\). At any laboratory temperature, \(E_\text{gap}/k_BT \gg 1\): effectively infinite protection. The 10 independent K6 loops provide 10 topological qubit modes. The SL(2,ℂ) holonomies implement quantum gates. The Thomas precession non-commutativity (\([K_x,K_y] = -J_z\)) gives non-commuting gate operations — the structure needed for universal computation.</p>
+
+<h1>7. Further Directions</h1>
+<h2>7.1 Condensed Matter: Topological Band Structure</h2>
+<p>The K6/QS3 Hodge star weights (★ = 4/3, 0.738, 0.596) are specific hopping amplitude ratios. An optical lattice engineered with these ratios should exhibit a topological band structure with S₆ symmetry and protected edge states at domain boundaries. The Chern number \(c_1 = 1\) predicts edge modes with quantized transport.</p>
+<h2>7.2 Quantum Error Correction</h2>
+<p>The 10 independent K6 loops define a natural 10-qubit stabilizer code. The stabilizers are the 10 holonomy operators \(W_i = \mathrm{Tr}(H_{\text{loop}_i})\); logical qubits are the code space. The trefoil statistics give the correct syndrome anticommutativity without additional structure.</p>
+<h2>7.3 Cosmic Microwave Background</h2>
+<p>If spacetime has K6/QS3 discrete structure at the Planck scale, the 10 independent loops imprint a specific angular power spectrum on CMB polarization. The spectrum would have modulation at multipoles corresponding to the cyclomatic structure of K6 at the hierarchy scale \(\lambda = 2.389\times10^{22}\). This is speculative but computable.</p>
+<h2>7.4 Black Hole Information</h2>
+<p>At the black hole threshold \(M = m_P^2/m_e\), the K6/QS3 relay lattice has \(R_S = 2t_C\). Information entering the black hole is encoded in the relay holonomies at the horizon — two node spacings wide. The Hawking radiation in K6/QS3 would be relay phonons with characteristic energy \(\hbar c/(2t_C) = m_ec^2/2\). Whether the K6/QS3 relay structure preserves unitarity across the horizon is an open question and the most fundamental test of the framework at gravitational scales.</p>
+
+<hr>
+<p style="text-align:center;color:#888;font-size:.88em;">K6/QS3 Research Program &nbsp;|&nbsp; DRAFT — Not for Distribution</p>
+</body>
+</html>

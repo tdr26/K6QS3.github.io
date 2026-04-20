@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — The Hunt for Alpha: Electromagnetic Coupling from Geometry</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  :root{--blue:#1F3864;--mid:#2E75B6;--light:#D5E8F0;--eq-bg:#f4f6ff;--note-bg:#fff8e1;--key-bg:#e8f0fe;--pass:#1a7a1a;--open:#c06000}
+  body{font-family:Georgia,serif;max-width:900px;margin:40px auto;padding:0 28px;line-height:1.78;color:#1a1a1a;background:#fafafa}
+  h1{font-size:1.85em;color:var(--blue);border-bottom:3px solid var(--mid);padding-bottom:6px;margin-top:2.2em}
+  h2{font-size:1.28em;color:var(--mid);margin-top:1.8em}
+  h3{font-size:1.1em;color:#404040;font-style:italic;margin-top:1.4em}
+  .title-block{text-align:center;margin-bottom:2em}
+  .title-block h1{border:none;font-size:2.3em}
+  .series{font-size:1em;color:var(--mid);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.3em}
+  .subtitle{font-size:1.3em;color:var(--mid)}
+  .meta{color:#888;margin-top:.4em;font-size:.95em}
+  .abstract{background:#f0f4f8;border-left:4px solid var(--mid);padding:1em 1.5em;margin:1.5em 0}
+  .shared-intro{background:#f7faf7;border-left:4px solid #5a9a5a;padding:1em 1.5em;margin:1.5em 0;border-radius:0 6px 6px 0}
+  .shared-intro h2{margin-top:.5em;color:#2a6a2a}
+  .eq{background:var(--eq-bg);border:1px solid #dde;border-radius:4px;padding:.55em 1.2em;margin:.8em 0 .8em 2em;font-size:.93em;line-height:1.6}
+  .key-result{background:var(--key-bg);border:2px solid var(--mid);border-radius:6px;padding:.8em 1.2em;margin:1em 0;text-align:center;font-weight:bold;color:var(--blue)}
+  .note{background:var(--note-bg);border-left:4px solid #FFC107;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#555}
+  .correction{background:#fff0f0;border-left:4px solid #cc3333;padding:.6em 1em;margin:.8em 0;font-style:italic;color:#600}
+  .paper-links{background:#e8f0fe;border:1px solid var(--mid);border-radius:6px;padding:1em 1.5em;margin:1.5em 0}
+  .paper-links h3{margin-top:.3em;color:var(--blue)}
+  .paper-links a{color:var(--mid);display:block;margin:.3em 0;text-decoration:none;font-size:.97em}
+  .paper-links a:hover{text-decoration:underline}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  th{background:var(--light);text-align:left;padding:7px 10px;font-size:.9em}
+  td{padding:6px 10px;border-bottom:1px solid #ddd;font-size:.9em}
+  tr:nth-child(even){background:#f9f9f9}
+  code{background:#eef;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:.92em}
+  hr{border:none;border-top:2px solid var(--mid);margin:2.5em 0}
+  ul li,ol li{margin:.35em 0}
+  .pass{color:var(--pass);font-weight:bold}
+  .open{color:var(--open)}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin:1em 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="title-block">
+  <div class="series">K6 / QS3 Research Program &nbsp;·&nbsp; Paper 3 of 4</div>
+  <h1>K6 / QS3</h1>
+  <div class="subtitle">The Hunt for Alpha: Electromagnetic Coupling from Geometry</div>
+  <div class="meta">April 2026 &nbsp;|&nbsp; DRAFT — Not for distribution without author consent</div>
+</div>
+<hr>
+<div class="paper-links">
+<h3>K6/QS3 Research Program — Paper Series</h3>
+<a href="k6qs3_overview.html">Paper 0 &nbsp;·&nbsp; Overview: Motivation, Substrate, and Results</a>
+<a href="k6qs3_classical_sr.html">Paper 1 &nbsp;·&nbsp; Classical &amp; Special Relativity Validations</a>
+<a href="k6qs3_standard_model.html">Paper 2 &nbsp;·&nbsp; Standard Model Structure and Bell's Inequality</a>
+<a href="k6qs3_alpha_hunt.html">Paper 3 &nbsp;·&nbsp; The Hunt for Alpha: Electromagnetic Coupling from Geometry</a>
+<a href="k6qs3_predictions.html">Paper 4 &nbsp;·&nbsp; Predictions: Quantum Computing, Condensed Matter, and Beyond</a>
+</div>
+
+<div class="abstract">
+<strong>Abstract.</strong> The fine structure constant \(\alpha = 1/137.036...\) is a transcendental number. In K6/QS3, the ratio \(a_0/t_C = 1/\alpha\) — Bohr radius to reduced Compton wavelength — is experimental evidence that \(\alpha\) is a topological ratio, not an algebraic one. This paper documents the systematic accounting of electromagnetic coupling corrections from K6/QS3 geometry, without using \(\alpha\) as an input. Three alpha-free corrections are computed (log running, Hopf Hodge, and K₃,₃ Hodge), accounting for 37% of the required adjustment. Three further terms — geodesic curvature on S³, 5-valent vertex junction corrections, and temporal Hodge weights — are identified and set up for future computation. The goal is not algebraic derivation of a transcendental number, but geometric consistency accounting.
+</div>
+
+<div class="shared-intro">
+<h2>What is K6/QS3?</h2>
+<p>The complete graph K6 — six vertices, every pair connected, 15 edges total — together with the quaternionic 3-sphere QS3 (isomorphic to SU(2)) form the discrete geometric substrate of this research program. Without assuming continuous spacetime and without inserting coupling constants by hand, the gauge symmetries of the Standard Model emerge from this structure: U(1) from the Hopf fibration of QS3, SU(2) from its quaternionic generators, and SU(3) from the K₃,₃ bipartite subgraph. Fermion statistics come from the trefoil knot embedded in K6/QS3, whose braid phase is exactly \(−1\) under particle exchange. The Lorentz group acts through SL(2,\(\mathbb{C}\)) holonomies, with causal structure emerging from the stationary phase of the path sum. All from one finite graph.</p>
+<p>Two free parameters — tube length \(\lambda\) and stiffness \(k\) — are fixed by the electron mass alone. The speed of light emerges as an exact algebraic output. The framework is falsifiable: every claim is a specific numerical prediction to be checked. The papers in this series document the current state of that checking.</p>
+</div>
+
+<h1>1. Alpha is Topological, Not Algebraic</h1>
+<p>The fine structure constant \(\alpha = 1/137.036...\) is transcendental. A transcendental number cannot emerge from integer counting, winding numbers, or Euler characteristics. It requires geometric integration. The K6/QS3 framework acknowledges this honestly: the goal is to account for the electromagnetic coupling through identifiable geometric contributions, not to derive an exact algebraic formula.</p>
+<p>The starting observation is geometric:</p>
+<div class="eq">\[ \frac{a_0}{t_C} = \frac{1}{\alpha} = 137.036 \]</div>
+<div class="key-result">The hydrogen atom is <em>roughly</em> 137 times larger than the electron's relativistic quantum length. This ratio is experimental evidence that \(\alpha\) is topological in origin.</div>
+<p>In K6/QS3, \(t_C\) sets the relay node spacing \(a\). The ratio \(a_0/a\) counts how many relay nodes fit inside the hydrogen atom — a topological statement about how the Hopf fiber U(1) coupling scales across the hydrogen ground state. The irrationality of this ratio is expected: it involves transcendental geometric integrals (the Seifert surface, the dilogarithm) that cannot be rational.</p>
+
+<h1>2. The K6 Bare Estimate and Required Correction</h1>
+<p>From K6 loop geometry and the self-consistency condition (Part XXVI of working notes), the bare topological estimate gives \(1/\alpha_{K6} \approx 138.4\). The known value is \(1/\alpha = 137.036\). The required correction is:</p>
+<div class="eq">\[ \Delta(1/\alpha)_\text{required} = -(138.4 - 137.036) = -1.364 \]</div>
+<p class="note">Caveat: the 138.4 estimate itself used the known \(\alpha\) in the self-consistency equation and is therefore not fully alpha-free. A genuine forward prediction requires computing the bare coupling from K6 topology with no \(\alpha\) on the right-hand side. This is an open problem. The corrections documented here are, however, independently motivated by the K6/QS3 geometry.</p>
+
+<h1>3. The Dual Lattice and Hodge Star</h1>
+<h2>3.1 Why the Magnetic Sector is Deficient</h2>
+<p>K6 as a 1-complex (vertices and edges, no faces) computes the electric sector correctly but has no dual 2-cells to carry the magnetic field. The Hodge star \(\star: \Omega^1(\text{primal})\to\Omega^2(\text{dual})\) requires explicit dual faces. The S₆ outer automorphism is identified as the discrete Hodge star: it maps K6's 15 primal edges to its 15 perfect matchings (dual 2-cells) in a group-theoretic bijection. The K6/QS3 embedding on S³ gives four exact Hodge star weights:</p>
+<table>
+<tr><th>Edge type</th><th>\(l_\text{primal}\)</th><th>\(\star\)</th><th>Exact form</th></tr>
+<tr><td>Within-group (6)</td><td>\(2\pi/3\)</td><td>0.5964</td><td>\(\arccos(1/\sqrt{10})/(2\pi/3)\)</td></tr>
+<tr><td>K₃,₃ diagonal (3)</td><td>\(\pi/2\)</td><td><strong>4/3</strong></td><td>Exact rational</td></tr>
+<tr><td>K₃,₃ off-diagonal (6)</td><td>\(\pi/2\)</td><td>0.7380</td><td>\(\arccos(2/5)/(\pi/2)\)</td></tr>
+<tr><td>U(1) Hopf fiber</td><td>\(2\pi\)</td><td><strong>1/4</strong></td><td>\(|\int_\Sigma F|/(2\pi) = (\pi/2)/(2\pi)\)</td></tr>
+</table>
+
+<h1>4. Alpha-Free Corrections: Current Accounting</h1>
+<h2>4.1 Log Running from Fixed UV/IR Ratio</h2>
+<p>The UV cutoff \(\Lambda = \pi m_ec^2\) and IR scale \(\mu = m_ec^2\) give \(\Lambda/\mu = \pi\) exactly (from Option D). One-loop running:</p>
+<div class="eq">\[ \Delta(1/\alpha)_\text{log} = -\frac{2}{3\pi}\ln\pi = -0.2429 \]</div>
+<h2>4.2 Hodge Corrections from Magnetic Sector Deficit</h2>
+<div class="eq">\[ \Delta(1/\alpha)_\text{Hodge, U(1)} = -\frac{1}{3\pi}\ln\!\left(\frac{\star_\text{cont}}{\star_\text{disc}}\right) = -\frac{\ln 2}{3\pi} = -0.0735 \]</div>
+<div class="eq">\[ \Delta(1/\alpha)_\text{Hodge, K33} = -\frac{6}{3\pi}\ln\!\left(\frac{1}{0.738}\right) = -0.1934 \]</div>
+
+<h2>4.3 Full Accounting Table</h2>
+<table>
+<tr><th>Contribution</th><th>Value</th><th>Alpha-free?</th><th>Status</th></tr>
+<tr><td>Log running, \(\Lambda/\mu = \pi\)</td><td>\(-0.243\)</td><td class="pass">✓</td><td class="pass">Done</td></tr>
+<tr><td>Hodge, U(1) Hopf (\(\star = 1/4\) vs \(1/2\))</td><td>\(-0.074\)</td><td class="pass">✓</td><td class="pass">Done</td></tr>
+<tr><td>Hodge, K₃,₃ off-diagonal (6 edges, \(\star=0.738\))</td><td>\(-0.193\)</td><td class="pass">✓</td><td class="pass">Done</td></tr>
+<tr><td>Geodesic curvature on S³</td><td>TBD</td><td class="pass">✓</td><td class="open">Open</td></tr>
+<tr><td>5-valent vertex junction (6 vertices)</td><td>TBD</td><td class="pass">✓</td><td class="open">Open</td></tr>
+<tr><td>Temporal Hodge weights (4D action)</td><td>TBD</td><td class="pass">✓</td><td class="open">Open</td></tr>
+<tr><td><strong>Total so far</strong></td><td><strong>\(-0.510\)</strong></td><td></td><td>37% of gap</td></tr>
+<tr><td>Required</td><td>\(-1.364\)</td><td>—</td><td>Reference</td></tr>
+</table>
+
+<h1>5. Three Open Terms</h1>
+<h2>5.1 Geodesic Curvature Correction</h2>
+<p>The edges of K6 on S³ are geodesic arcs. A geodesic on S³ has zero intrinsic (geodesic) curvature, but nonzero extrinsic curvature as a curve in ℝ⁴. This extrinsic curvature modifies the area swept by the dual face as the primal edge is deformed — a correction to the Hodge weight beyond the circumcenter calculation. For arcs of length \(2\pi/3\) and \(\pi/2\) on unit S³, this is a computable geometric correction in closed form.</p>
+<h2>5.2 Five-Valent Vertex Junctions</h2>
+<p>At each of K6's 6 vertices, exactly 5 edges meet. Kirchhoff's current law at a 5-edge junction leaves one degree of freedom that cannot be balanced locally: the currents at 4 edges can be paired, but the fifth is unconstrained without a global condition. This residual drives a non-local magnetic flux correction to the Maxwell action. Unlike the Hodge weight corrections (which are local, edge-by-edge), this is a vertex correction — it depends on the full connectivity of K6 around each vertex. It is computable from the K6 adjacency structure and requires no new geometric input beyond what is already established. The contribution is expected to be of order \(1/(2\pi)\) per vertex, giving \(6/(2\pi) \approx 0.95\) — of the right order of magnitude to close a significant part of the remaining gap.</p>
+<h2>5.3 Temporal Hodge Weights</h2>
+<p>The calculations so far are purely spatial (3D Hodge star on S³). Electromagnetism in 4D requires the temporal Hodge weight as well — the mapping between the electric field (a 1-form in 4D spacetime) and its dual (a 3-form). This requires embedding the time-like edges of K6/QS3 in 4D Minkowski space and computing their dual volumes. The SL(2,ℂ) boost structure (Section 5 of Papers 1-2) gives the time-like edge directions; their dual faces are the natural next computation.</p>
+
+<h1>6. The Seifert Surface as a Consistency Check</h1>
+<p>From prior work (v8.2 working notes), the H2 Seifert surface correction gives \(\Delta(1/\alpha) = -120\,\Gamma_{H2} = -1.364\) — matching the required correction to 99.97%. The formula uses the dilogarithm \(\text{Li}_2(e^{-2\alpha})\) and the factor \(120 = |S_5|\). While numerically excellent, this derivation uses \(e^{-2\alpha}\) in the wave function weighting and is therefore not fully alpha-free. It provides strong geometric evidence that the Seifert surface is the correct mechanism. Rederiving the factor 120 from K6 topology alone — without using the known \(\alpha\) as input — is a primary target for this paper's next version.</p>
+
+<hr>
+<p style="text-align:center;color:#888;font-size:.88em;">K6/QS3 Research Program &nbsp;|&nbsp; DRAFT — Not for Distribution</p>
+</body>
+</html>
