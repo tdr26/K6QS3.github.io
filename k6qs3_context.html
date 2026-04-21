@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K6/QS3 — Session Context and Research State</title>
+<style>
+  body { font-family: Georgia, serif; max-width: 860px; margin: 0 auto; padding: 2rem 2rem 5rem; font-size: 16px; line-height: 1.75; color: #1a1a1a; background: #fafaf8; }
+  h1 { font-size: 1.6rem; font-weight: normal; color: #2c4a7c; border-bottom: 2px solid #2c4a7c; padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+  .tagline { font-style: italic; color: #666; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .date { font-family: monospace; font-size: 0.8rem; color: #999; }
+  h2 { font-size: 1.1rem; font-weight: bold; color: #2c4a7c; margin: 2.2rem 0 0.6rem; border-bottom: 1px solid #ccc; padding-bottom: 0.25rem; }
+  p { margin-bottom: 0.9rem; }
+  ul { margin: 0.3rem 0 0.9rem 1.4rem; }
+  li { margin-bottom: 0.3rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 1rem 0 1.3rem; }
+  th { background: #eeeee8; border: 1px solid #ccc; padding: 0.45rem 0.7rem; text-align: left; }
+  td { border: 1px solid #ccc; padding: 0.4rem 0.7rem; vertical-align: top; }
+  tr:nth-child(even) td { background: #f5f5f0; }
+  .math { font-family: monospace; font-size: 0.9rem; background: #f0f0ea; border-left: 3px solid #2c4a7c; padding: 0.7rem 1rem; margin: 0.9rem 0; white-space: pre-wrap; }
+  .new { background: #f0f5ff; border-left: 3px solid #2c6fad; padding: 0.7rem 1rem; margin: 0.9rem 0; font-size: 0.93rem; }
+  .open { background: #fff8f0; border-left: 3px solid #e0a060; padding: 0.6rem 1rem; margin: 0.7rem 0; font-size: 0.9rem; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  footer { margin-top: 3rem; font-family: monospace; font-size: 0.78rem; color: #aaa; border-top: 1px solid #ddd; padding-top: 0.8rem; }
+  .updated { font-size: 0.75rem; font-family: monospace; color: #2c6fad; margin-left: 0.5em; }
+</style>
+</head>
+<body>
+
+<h1>K6 / QS3 Research Program</h1>
+<div class="tagline">Session Context and Research State — Dense summary for session restoration</div>
+<div class="date">April 2026 &nbsp;|&nbsp; Load this document to instantiate full research context in a new session &nbsp;|&nbsp; DRAFT</div>
+
+<hr>
+
+<h2>1. What K6/QS3 Is</h2>
+
+<p>A discrete quantum field theory program. The substrate is the 
+complete graph K6 (6 vertices, 15 edges, cyclomatic complexity 10) 
+combined with the quaternionic 3-sphere QS3 (S³ with quaternionic 
+structure, isomorphic to SU(2)). Two copies of QS3 are connected at a 
+wedge basepoint: QS3₁ (quarks, color) and QS3₂ (leptons, colorless). The
+ K₃,₃ bipartite subgraph (3+3 vertices, 9 inter-group edges) carries 
+SU(3) color. The Hopf fibration S³→S² with fiber S¹ is intrinsic to QS3 
+and carries U(1) electromagnetism.</p>
+
+<p>K6/QS3 is also a model of spacetime: each cell is a deformable 
+3-sphere, and the foam packing of these cells is curved spacetime. 
+Metric deformation = gravitational field. Equilibrium packing 
+(minimizing crease area) = Einstein equations in discrete form.</p>
+
+<p><strong>Guiding principle:</strong> no dimensionless constants 
+inserted by hand. All constants must be derivable from K6/QS3 geometry. 
+The framework is falsifiable.</p>
+
+<h2>2. Gauge Content: Complete Assignment</h2>
+
+<table>
+  <thead><tr><th>SM Object</th><th>Geometric Home</th><th>Group</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Photon</td><td>Hopf fiber S¹ of QS3 (S³→S²)</td><td>U(1)</td><td>✓ Structural</td></tr>
+    <tr><td>W+, W−</td><td>Off-diagonal quaternionic generators {i,j}</td><td>SU(2)</td><td>✓ Structural</td></tr>
+    <tr><td>Z boson</td><td>Mix of W3 and U(1)_Y via Weinberg angle</td><td>SU(2)×U(1)</td><td>✓ Structural</td></tr>
+    <tr><td>8 gluons</td><td>K₃,₃ bipartite edges (9 minus singlet)</td><td>SU(3)</td><td>✓ Structural</td></tr>
+    <tr><td>Quarks</td><td>QS3₁ excitations, color triplet {r,g,b}</td><td>SU(3) fund.</td><td>✓ Structural</td></tr>
+    <tr><td>Leptons</td><td>QS3₂ excitations, K₃,₃-unreachable</td><td>Colorless</td><td>✓ Structural</td></tr>
+    <tr><td>Fermi statistics</td><td>Trefoil T(2,3) braid phase = −1</td><td>Topological</td><td>✓ Exact</td></tr>
+    <tr><td>EM duality E↔B</td><td>S₆ outer automorphism: edges↔matchings</td><td>Out(S₆)=ℤ₂</td><td>✓ Identified</td></tr>
+    <tr><td>Gravity</td><td>Metric deformation of S³ cells in foam</td><td>Diff. geometry</td><td>✓ Identified</td></tr>
+  </tbody>
+</table>
+
+<h2>3. Calibration: Option D (Complete)</h2>
+
+<p>Two free parameters (λ, k) fixed from electron mass m_e alone. Three equivalent routes to λ:</p>
+
+<div class="math">λ = t_C/l_P = E_P/(m_e c²) = m_P/m_e = 2.389222×10²²       k = m_e³c⁴/ℏ² = 5.490×10¹¹ J/m²
+
+v = a√(k/m_e) = [ℏ/(m_e c)]·[m_e c²/ℏ] = c    [exact — every factor cancels, verified 12 sig figs]
+
+E_max = π m_e c² = 1.605 MeV       E_max/m_e c² = π [exact]       ln π = 1.1447 [fixed UV/IR log]</div>
+
+<p>Node spacing a = t_C = 3.862×10⁻¹³ m. Classical electron radius r_e = α·a = 2.8179 fm (verified).</p>
+
+<h2>4. Propagators (Complete)</h2>
+
+<div class="math">G_F(k) = −1/(k²+iε)  [photon]       S_F(k) = (γᵘk_μ + m)/(k²−m²+iε)  [Dirac]</div>
+
+<p>Both emerge from relay chain mechanics. Gamma matrices from Weyl 
+spinor structure of QS3 = SU(2). UV cutoff from zone boundary — no 
+separate regularization needed.</p>
+
+<h2>5. Lorentz Structure: SL(2,ℂ) Path Integrals</h2>
+
+<p>Each K6 edge carries connection U = exp[(φ−iθ)σ_z/2], phase S = 
+−2sinh(φ/2)sin(θ/2). Amplitude: A(A→B) = Σ_p e^{iS(p)}, 65 simple paths 
+between any two K6 vertices. Lightcone = stationary phase path. Rapidity
+ exactly additive (diff = 2.78×10⁻¹⁷, machine precision). Thomas 
+precession from [K_x,K_y] = −J_z, verified all axis pairs. <strong>The 10 cyclomatic loops carry Lorentz holonomy. The U(1) EM sector has exactly one loop — the Hopf fiber S¹.</strong></p>
+
+<h2>6. The Hodge Star Dual Lattice</h2>
+
+<p>S₆ outer automorphism = discrete Hodge star: maps 15 primal edges 
+(electric) to 15 perfect matchings (magnetic dual 2-cells). Only 
+symmetric group Sₙ (n≠2) with outer automorphism → EM duality requires 
+algebraic uniqueness of S₆.</p>
+
+<p><strong>Four exact Hodge weights:</strong></p>
+<table>
+  <thead><tr><th>Edge type</th><th>l_primal</th><th>★</th><th>Exact form</th></tr></thead>
+  <tbody>
+    <tr><td>Within-group (6 edges)</td><td>2π/3</td><td>0.5964</td><td>arccos(1/√10)/(2π/3)</td></tr>
+    <tr><td>K₃,₃ diagonal (3 edges)</td><td>π/2</td><td><strong>4/3</strong></td><td>Exact rational</td></tr>
+    <tr><td>K₃,₃ off-diagonal (6 edges)</td><td>π/2</td><td>0.7380</td><td>arccos(2/5)/(π/2)</td></tr>
+    <tr><td>U(1) Hopf fiber</td><td>2π</td><td><strong>1/4</strong></td><td>|∫_Σ F|/(2π) = (π/2)/(2π) — EXACT</td></tr>
+  </tbody>
+</table>
+
+<p>Correction to v8.2 notes: E(√5/3) = 1.3221 (not 1.3417). Seifert area = 12.461 (not 12.643). Integral π/2 unaffected.</p>
+
+<h2>7. Alpha: Status and Accounting</h2>
+
+<p>K6 bare estimate: 1/α_K6 ≈ 138.4. Required correction: Δ(1/α) = 
+−1.364. Caveat: the 138.4 estimate used known α in the self-consistency 
+equation — a genuine forward prediction remains open.</p>
+
+<table>
+  <thead><tr><th>Contribution</th><th>Value</th><th>Independent?</th></tr></thead>
+  <tbody>
+    <tr><td>Log running: Λ/μ = π (Option D)</td><td>−0.243</td><td>✓ Yes</td></tr>
+    <tr><td>Hodge, U(1) Hopf: ★=1/4 vs 1/2 continuum</td><td>−0.074</td><td>✓ Yes</td></tr>
+    <tr><td>Hodge, K₃,₃ off-diagonal (6 edges, ★=0.738)</td><td>−0.193</td><td>✓ Yes</td></tr>
+    <tr><td><strong>Total so far</strong></td><td><strong>−0.510</strong></td><td>37% of gap</td></tr>
+    <tr><td>Geodesic curvature on S³</td><td>TBD</td><td>Open</td></tr>
+    <tr><td>5-valent vertex junction (Kirchhoff residual)</td><td>TBD (~0.95 est.)</td><td>Open</td></tr>
+    <tr><td>Temporal Hodge weights (4D action)</td><td>TBD</td><td>Open</td></tr>
+    <tr><td>Vacuum QS3 Berger squashing (η parameter)</td><td>TBD</td><td>Open — see §18</td></tr>
+  </tbody>
+</table>
+
+<h2>8. Scattering Results (All Verified)</h2>
+
+<table>
+  <thead><tr><th>Result</th><th>Formula</th><th>Key numbers</th></tr></thead>
+  <tbody>
+    <tr><td>Rutherford</td><td>dσ/dΩ = (Z₁Z₂αℏc)²/(4E)² / sin⁴(θ/2)</td><td>518.4 mb/sr at 90°, 1 MeV p-p</td></tr>
+    <tr><td>Compton shift</td><td>Δλ = 2πa(1−cosθ), from 4-momentum + a=t_C</td><td>Δλ_max = 4.8526 pm ✓</td></tr>
+    <tr><td>Thomson σ_T</td><td>(8π/3)(αa)² = (8π/3)r_e²</td><td>0.6652 barn ✓ (CODATA: 0.6653)</td></tr>
+    <tr><td>Mott scattering</td><td>1/sin⁴ + 1/cos⁴ − 1/(sin²cos²), trefoil phase=−1</td><td>Mott=Ruth exactly at θ=90°</td></tr>
+    <tr><td>Thomas precession</td><td>sin(Ω/2) = sinh(φ₁/2)sinh(φ₂/2)/√(A²+D²)</td><td>21 cases, all machine precision ✓</td></tr>
+  </tbody>
+</table>
+
+<h2>9. Bell's Inequality: Topological Necessity</h2>
+
+<p>Hopf bundle c₁ = 1 → no global section → no local hidden variable 
+model. Bell violation is a theorem, not a calculation. Singlet 
+correlation E(a,b) = −cos θ_ab from SU(2) structure of QS3₂. CHSH at 
+optimal angles: |S| = 2√2 (Tsirelson bound saturated). Bell violation, 
+Fermi statistics (trefoil braid phase −1), and integer QHE (σ_H = e²/h 
+from c₁=1) are three faces of one topological fact.</p>
+
+<h2>10. Predictions</h2>
+
+<table>
+  <thead><tr><th>Prediction</th><th>Value</th><th>Exact?</th></tr></thead>
+  <tbody>
+    <tr><td>Lamb-Dicke at Compton freq.</td><td>η = 1/√2 = 0.707107</td><td>Yes, algebraic</td></tr>
+    <tr><td>Quantized Hall conductance</td><td>σ_H = e²/h (from c₁=1)</td><td>Yes, topological</td></tr>
+    <tr><td>K6 MAX-CUT ground state</td><td>QS3₁/QS3₂ bipartition (9-edge cut)</td><td>Structural</td></tr>
+    <tr><td>BH threshold mass</td><td>M = m_P²/m_e = 5.2×10¹⁴ kg</td><td>Yes, algebraic</td></tr>
+    <tr><td>BH threshold R_S</td><td>R_S = 2t_C (exactly — every factor cancels)</td><td>Yes, exact proof</td></tr>
+    <tr><td>Topological qubit gap</td><td>E_gap = m_e c² = 511 keV</td><td>Yes</td></tr>
+    <tr><td>BH topological phase transition</td><td>M_c = M_thresh/(12 arccos(1/√10)) = 3.5×10¹³ kg</td><td>Yes, exact</td></tr>
+  </tbody>
+</table>
+
+<h2>11. Gravity and Foam Geometry</h2>
+
+<p>K6/QS3 cells are deformable 3-spheres packed as a foam. Deformation 
+from round S³ = gravitational field. Equilibrium packing = discrete 
+Einstein equations.</p>
+<ul>
+  <li><strong>Diffeomorphism invariance:</strong> K6 connectivity is topological — all gauge assignments preserved under smooth deformation.</li>
+  <li><strong>Gravitational falloff:</strong> Cells relax toward undeformed S³ away from mass source. Discrete Schwarzschild 1/r profile.</li>
+  <li><strong>Orbits = stationary phase:</strong> Relay clumps follow stationary-phase paths through non-uniform foam = geodesics.</li>
+  <li><strong>Contact surfaces = Israel junctions:</strong> Holonomy continuity across cell boundaries.</li>
+  <li><strong>Vacuum squashing:</strong> Berger sphere parameter η deforms round S³. Shifts Hodge weights. Candidate mechanism for alpha residual.</li>
+</ul>
+
+<h2>12. Black Hole Information: Soft Hair</h2>
+
+<p>K6 is 5-edge-connected — interior and exterior remain topologically 
+connected through foam contact topology. Information stored in 
+topological integers (holonomy winding numbers, Wilson loops) — not in 
+metric degrees of freedom.</p>
+
+<p>Soft hair = K6/QS3 holonomies at horizon: each Planck-scale cell 
+carries 10 independent loop holonomies (1 U(1) + 3 SU(2) + 6 SU(3)).</p>
+
+<div class="math">S_soft = 10 × A/l_P² = 40 × S_BH       S_soft/S_BH = 10/(1/4) = 40</div>
+
+<p><strong>Key open computation:</strong> Foam contact constraints must 
+reduce holonomy count by exactly 40 to recover S_BH = A/(4l_P²). If this
+ follows from K6/QS3 contact topology, the factor 1/4 in the area law is
+ the foam contact constraint factor.</p>
+
+<h2>13. Black Hole Evaporation: Phase Structure</h2>
+
+<p>Three regimes as BH loses mass: M &gt; 3.5×10¹³ kg → K6 frozen (all 
+astrophysical BHs). M ≈ 3.5×10¹³ kg → within-group edges fluctuating 
+(Fermi statistics dynamical). M &lt; 1.6×10¹³ kg → all edges fluctuating
+ (SM structure dissolving).</p>
+
+<h2>14. Paper Series</h2>
+
+<table>
+  <thead><tr><th>Paper</th><th>Title</th><th>Central content</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>Overview</td><td>Substrate, gauge content, results summary</td></tr>
+    <tr><td>1</td><td>Classical &amp; SR</td><td>Rutherford, Compton, Thomas precession, Mott</td></tr>
+    <tr><td>2</td><td>Standard Model</td><td>Propagators, gauge content, Fermi stats, Bell</td></tr>
+    <tr><td>3</td><td>Hunt for Alpha</td><td>Topological ratio, Hodge weights, 37% gap</td></tr>
+    <tr><td>4</td><td>Predictions</td><td>η=1/√2, QHE, MAX-CUT, R_S=2t_C, topological qubits</td></tr>
+    <tr><td>5</td><td>Gravity &amp; Foam</td><td>Foam spacetime, soft hair, S_soft=40 S_BH, BH phases</td></tr>
+    <tr><td><strong>6</strong> <span class="updated">NEW</span></td><td><strong>Hopf-Galois Structure and Uniqueness</strong></td><td>S₆ dual Hopf-Galois structures, uniqueness theorem, maps K6/QS3→H, quantum group connection</td></tr>
+    <tr><td><strong>5A</strong> <span class="updated">NEW</span></td><td><strong>Appendix A: Gravitational Waves from Foam Mechanics</strong></td><td>Consistency
+ with quadrupole formula: wave equation ✓, 1/r fall-off ✓, multipole 
+selection ✓, source Q_ij ✓. Coefficient C_foam open.</td></tr>
+  </tbody>
+</table>
+
+<h2>15. Open Problems by Priority</h2>
+
+<p><strong>Immediate:</strong></p>
+<ul>
+  <li>5-valent vertex junction correction: Kirchhoff residual at each of K6's 6 vertices. Estimated ~0.95 contribution to Δ(1/α).</li>
+  <li>Geodesic curvature correction to Hodge weights.</li>
+  <li>Foam contact constraint factor: show z_eff = 40 recovers S_BH = A/(4l_P²).</li>
+  <li>Genuine forward alpha prediction: compute g² from K6 topology with no α on the right-hand side.</li>
+</ul>
+
+<p><strong>Near-term:</strong></p>
+<ul>
+  <li>Mott → Bhabha scattering: test QS3₁-QS3₂ coupling structure.</li>
+  <li>Hydrogen fine structure: SL(2,ℂ) Dirac extension closes 0.03% Bohr residual.</li>
+  <li>Berger squashing parameter η: compute alpha shift as function of η, compare to 0.854 residual.</li>
+  <li>Temporal Hodge weights: time-like edge embedding in Minkowski space.</li>
+</ul>
+
+<p><strong>Paper 5 Appendix A — Gravitational Waves (new):</strong></p>
+<div class="open"><strong>5A.1 (Foam contact integral):</strong> Compute
+ C_foam from K6/QS3 foam contact network. GR requires C_foam = 1/5 to 
+recover Peters-Mathews coefficient 32/5. Hulse-Taylor constraint: 
+|C_foam − 1/5| &lt; 0.001. All structural features confirmed consistent;
+ this coefficient is the sole open item.</div>
+
+<p><strong>Long-term:</strong></p>
+<ul>
+  <li>Proton mass from K₃,₃ loop geometry (99% QCD binding energy).</li>
+  <li>CMB power spectrum from K6/QS3 Planck-scale structure.</li>
+  <li>Holonomy imprint recovery from Hawking radiation (microscopic unitarity proof).</li>
+  <li>Hyperbolic foam packing with z_eff = 40 near Schwarzschild horizon.</li>
+</ul>
+
+<h2>16. Python Modules (All Verified, numpy/scipy only)</h2>
+
+<table>
+  <thead><tr><th>File</th><th>Contents</th></tr></thead>
+  <tbody>
+    <tr><td>k6qs3_constants.py</td><td>CODATA 2018, Option D calibration (λ, k, v=c, E_max, r_e)</td></tr>
+    <tr><td>k6qs3_embedding.py</td><td>S³ embedding, toroidal K6 faces, circumcenters, Hodge weights</td></tr>
+    <tr><td>k6qs3_compton.py</td><td>Compton shift, Klein-Nishina, Thomson σ_T</td></tr>
+    <tr><td>k6qs3_rutherford.py</td><td>Rutherford cross section from static relay propagator</td></tr>
+    <tr><td>k6qs3_thomas_precession.py</td><td>Wigner angle via SL(2,ℂ) polar decomposition, all axes</td></tr>
+    <tr><td>k6qs3_mott_scattering.py</td><td>Mott formula with trefoil exchange term</td></tr>
+    <tr><td>k6qs3_bell_inequality.py</td><td>CHSH = 2√2, Hopf c₁=1 argument</td></tr>
+    <tr><td>k6qs3_predictions.py</td><td>η=1/√2, QHE, R_S=2t_C, BH threshold mass</td></tr>
+    <tr><td>k6qs3_edge_snap.py</td><td>Path count entropy, snap analysis, BH evaporation phase structure</td></tr>
+  </tbody>
+</table>
+
+<h2>17. Key Numbers for Quick Reference</h2>
+
+<table>
+  <thead><tr><th>Quantity</th><th>Value</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>λ = m_P/m_e</td><td>2.389222×10²²</td><td>Three independent routes, machine precision</td></tr>
+    <tr><td>t_C (node spacing a)</td><td>3.8616×10⁻¹³ m</td><td>Reduced Compton wavelength of electron</td></tr>
+    <tr><td>E_max/m_e c²</td><td>π (exact)</td><td>UV cutoff ratio</td></tr>
+    <tr><td>★_within</td><td>arccos(1/√10)/(2π/3) = 0.5964</td><td>6 within-group edges</td></tr>
+    <tr><td>★_K33_diag</td><td>4/3 (exact rational)</td><td>3 diagonal K₃,₃ edges</td></tr>
+    <tr><td>★_K33_off</td><td>arccos(2/5)/(π/2) = 0.7380</td><td>6 off-diagonal K₃,₃ edges</td></tr>
+    <tr><td>★_U(1)</td><td>1/4 (exact)</td><td>Seifert surface |∫F| = π/2, l_hopf = 2π</td></tr>
+    <tr><td>Δ(1/α) log</td><td>−0.243</td><td>−(2/3π)ln π, alpha-free</td></tr>
+    <tr><td>Δ(1/α) total so far</td><td>−0.510</td><td>37% of required −1.364</td></tr>
+    <tr><td>S_soft/S_BH</td><td>40 = 4×10</td><td>Factor, not exponential</td></tr>
+    <tr><td>M_BH threshold</td><td>m_P²/m_e = 5.2×10¹⁴ kg</td><td>R_S = 2t_C exactly</td></tr>
+    <tr><td>M_c/M_threshold</td><td>1/(12 arccos(1/√10)) = 0.0667</td><td>Topological phase transition</td></tr>
+    <tr><td>CHSH |S|</td><td>2√2 (Tsirelson bound)</td><td>c₁=1 obstruction</td></tr>
+    <tr><td>σ_T</td><td>0.6652 barn</td><td>= (8π/3)(αt_C)², CODATA: 0.6653</td></tr>
+    <tr><td>r_e = α·a</td><td>2.8179 fm</td><td>Classical electron radius = α × node spacing</td></tr>
+  </tbody>
+</table>
+
+<h2>18. Hopf-Galois Structure (New — Paper 6) <span class="updated">NEW</span></h2>
+
+<div class="new">
+<p><strong>Central result:</strong> K6/QS3 simultaneously realizes <em>both</em>
+ Hopf-Galois structures of S₆ — the classical (primal/electric) and the 
+exotic (dual/magnetic via outer automorphism). S₆ is the unique Sₙ for 
+which this is possible, because Out(Sₙ) = ℤ₂ only for n = 6.</p>
+</div>
+
+<p><strong>The two structures (Greither-Pareigis / Byott):</strong></p>
+<ul>
+  <li><strong>Classical:</strong> H = ℂ[S₆], natural regular embedding. Corresponds to primal edge connectivity of K₆ (electric sector).</li>
+  <li><strong>Exotic:</strong> H = ℂ[S₆]^φ, twisted by outer 
+automorphism φ. Corresponds to 15 perfect matchings (magnetic dual 
+sector). This structure exists for S₆-extensions only.</li>
+</ul>
+
+<p><strong>What survives any Hopf map K6/QS3 → H:</strong></p>
+<table>
+  <thead><tr><th>Feature</th><th>Survives?</th></tr></thead>
+  <tbody>
+    <tr><td>SU(3)×SU(2)×U(1) gauge groups</td><td>✓</td></tr>
+    <tr><td>Fermi statistics (braid phase −1)</td><td>✓ (braiding in Rep(H))</td></tr>
+    <tr><td>Bell violation (c₁=1)</td><td>✓ (topological)</td></tr>
+    <tr><td>EM duality via Out(S₆)</td><td>✓ only if target has Out = ℤ₂</td></tr>
+    <tr><td>Quark/lepton separation (K₃,₃)</td><td>Partial</td></tr>
+    <tr><td>Hodge weights, α derivability, UV cutoff</td><td>✗ (S³-geometry-specific)</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Open problems from Paper 6:</strong></p>
+<div class="open"><strong>6.1:</strong> Formalize the uniqueness 
+theorem: K6/QS3 is the unique complete-graph substrate for which EM 
+duality admits a Hopf-Galois algebraic realization.</div>
+<div class="open"><strong>6.2:</strong> Does Berger squashing η 
+correspond to quantum group deformation q in U_q(su(2))? If so, the 
+residual α correction gains an algebraic characterization.</div>
+<div class="open"><strong>6.3:</strong> Is K6/QS3 the unique Hopf-Galois
+ extension with SM gauge content + EM duality + fermionic braiding phase
+ −1? Requires classification beyond Greither-Pareigis applied to Sₙ.</div>
+<div class="open"><strong>6.4:</strong> Characterize QS3₁ ∨_{K₃,₃} QS3₂ 
+algebraically. It is not a standard wedge of Hopf algebras. Does it 
+define a new class of "bipartite-joined" Hopf algebras?</div>
+
+<p><strong>Key references:</strong> Byott (1996, Comm. Algebra 24:10); 
+Byott (2004, J. Pure Appl. Algebra 188); Childs (2000, AMS SURV-80); 
+Greither-Pareigis (1987, J. Algebra 106).</p>
+
+<hr>
+
+<footer>K6/QS3 Research Program &nbsp;|&nbsp; Context Document for 
+Session Restoration &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; DRAFT 
+&nbsp;|&nbsp; §18 added April 2026</footer>
+
+
+
+</body></html>
