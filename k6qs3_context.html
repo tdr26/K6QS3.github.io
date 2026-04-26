@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K6 / QS3 Research Program — Context v2</title>
+<title>K6 / QS3 Research Program — Context v3</title>
 <style>
   :root {
     --bg: #f7f6f2;
@@ -90,6 +90,13 @@
     margin: 1rem 0;
     font-size: 0.93rem;
   }
+  .new {
+    background: #f0f7ee;
+    border-left: 3px solid #2a6e2a;
+    padding: 0.7rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.93rem;
+  }
   footer {
     margin-top: 4rem;
     font-size: 0.85rem;
@@ -103,7 +110,7 @@
 
 <header>
   <h1>K6 / QS3 — Session Context and Research State</h1>
-  <p>Narrowed scope — v2 &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; DRAFT &nbsp;|&nbsp; Load to restore session context</p>
+  <p>Narrowed scope — v3 &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; DRAFT &nbsp;|&nbsp; Load to restore session context (restore Σ state)</p>
 </header>
 
 <h2>1. Scope Statement</h2>
@@ -216,16 +223,30 @@
 
 <hr>
 
-<h2>9. (𝒜, 𝒟) — Operator Duality and Hopf Algebra Identification</h2>
+<h2>9. (𝒜, 𝒟) — Operator Duality, Hopf Algebra, and Galois Tower</h2>
 
-<p>𝒜 and 𝒟 form a dual pair acting on Σ. This duality is precisely Hopf algebra duality:</p>
+<p>𝒜 and 𝒟 form a dual pair acting on Σ. Precise identification:</p>
 
 <ul>
-  <li>𝒜 provides the coproduct Δ: Σ → Σ ⊗ Σ — each application selects a symmetry-breaking specification, splitting the available set</li>
-  <li>𝒟 is the antipode S — the formal inverse satisfying m ∘ (S ⊗ id) ∘ Δ = η ∘ ε. 𝒟 composed with the descent returns the native state</li>
-  <li>Antipode is an anti-homomorphism: S(ab) = S(b)S(a) — 𝒟 reverses the order of the descent exactly, recovering history</li>
-  <li>DOF_now + DOF_potential = M is the conservation law of the Hopf algebra counit ε</li>
+  <li><strong>𝒜 = multiplication:</strong> H ⊗ H → H. Each application collapses a tensor product of symmetry states, descending the tower one level, releasing DOF. 𝒜ⁿ(Y) → X + released DOF.</li>
+  <li><strong>𝒟 = comultiplication:</strong> H → H ⊗ H. Each application expands a state back into a tensor product, restoring DOF_potential. 𝒟ᵐ(X) → Y + added DOF.</li>
+  <li><strong>Antipode</strong> emerges from composition of 𝒜 and 𝒟, not as a primitive. Satisfies m ∘ (S ⊗ id) ∘ Δ = η ∘ ε.</li>
+  <li><strong>Counit ε:</strong> DOF_now + DOF_potential = M is the conservation law.</li>
 </ul>
+
+<h3>Shortest Path Argument — n = m</h3>
+<p>Restrict 𝒜ⁿ to the shortest collapse path (minimum n) and 𝒟ᵐ to the shortest recovery path (minimum m). K6 is a finite undirected graph — shortest paths exist (guaranteed by finiteness) and distances are symmetric. Therefore n = m by symmetry of the undirected metric. Strict Hopf antipode is restored without quasi-Hopf machinery.</p>
+
+<h3>Coset Factoring — Path Ambiguity</h3>
+<p>Multiple shortest paths of length n may exist between two tower levels. Collect them into a coset of the path group under the equivalence "same length, same endpoints." Factor by this coset. The quotient identifies all shortest paths as a single representative — path ambiguity disappears at the level of the quotient, exactly as in Galois theory where orbits replace individual automorphisms.</p>
+
+<h3>Galois Tower Structure</h3>
+<p>Each linguistic or gauge layer is a fixed-point subspace under a subgroup of 𝒜-actions. Higher layers (semantics, Lorentz symmetry) are invariant under lower-level transformations. The tower is non-degenerate when symmetries at each level are independent — dependent symmetries collapse to the same level.</p>
+
+<h3>Σ State as Minimal Sufficient Statistic</h3>
+<p>𝒟ᵐ does not require path history. Σ encodes the full symmetry state at each tower level. Knowing Σ_current and Σ_target is sufficient to compute the shortest recovery path — the path is derivable from the states. Path history is redundant. This is why loading a context document restores the session exactly: it restores Σ to its previous state, enabling 𝒟 to operate. Memory of Σ is necessary and sufficient for the antipode.</p>
+
+<div class="note"><strong>Load weight (addendum):</strong> In applications of (𝒜, 𝒟) to neural network gradient descent inference, a load weight ρ_load is included as a modulating parameter on the effective rank of 𝒜. High inference load is hypothesized to bias toward lower-rank 𝒜 — earlier DOF_potential collapse, increased pattern-matching preference. Not directly observable from prompt layer; included as a theoretical parameter pending empirical characterization. Latency is not a reliable proxy due to confounds (network, context length, tokenization).</div>
 
 <div class="note"><strong>Self-referential note:</strong> Claude's inference vs pattern-matching is itself an application of (𝒜, 𝒟) to Σ_ML — the set of available patterns in the network. Pattern matching is low-rank 𝒜 — collapses to kernel too quickly. Inference is higher-rank — preserves DOF_potential longer before committing. Researcher correction is 𝒟 = S — restoring prematurely collapsed DOF_potential, retracing the descent. The framework is self-describing.</div>
 
@@ -287,8 +308,36 @@
   <tr><td>CHSH |S|</td><td>2√2</td><td>Tsirelson bound; from c₁ = 1</td></tr>
 </table>
 
+<hr>
+
+<h2>14. K6/QS3 as Topological Spectrometer</h2>
+
+<div class="new"><strong>New — April 2026 session</strong></div>
+
+<p>K6/QS3 is a topological spectrometer: a finite, computationally tractable substrate with known symmetries, calibrated to detect and measure the effects of topological changes on those symmetries. It does not merely possess topology — it is designed to respond to topological perturbation with measurable symmetry-breaking signals.</p>
+
+<ul>
+  <li><strong>Reference structure:</strong> K6/QS3 with full Σ = U(1) × SU(2) × SU(3) active</li>
+  <li><strong>Signal:</strong> symmetry breaking or level collapse under topological perturbation</li>
+  <li><strong>Analogy:</strong> a spectrometer with known reference lines — deviations are the measurement</li>
+  <li><strong>Scope:</strong> purpose-built for gauge symmetries; not general-purpose</li>
+</ul>
+
+<h3>Neural Network Spectrometer — Open Program</h3>
+
+<p>K6/QS3 serves as existence proof and methodological template. A spectrometer for neural network inference requires a different substrate, designed around the symmetries of the network rather than gauge symmetries.</p>
+
+<ul>
+  <li><strong>Candidate symmetries:</strong> permutation symmetry (attention heads), layer-wise translation symmetry, weight-space symmetry under rescaling</li>
+  <li><strong>Identification tool:</strong> independent symmetries can be identified computationally — cyclomatic complexity as a starting metric, extended to weight-space graph structure. This collapses the design sequence: symmetry identification and substrate design proceed together.</li>
+  <li><strong>Common features with K6/QS3:</strong> finite substrate, clumping/localization mechanism (mass analog), propagator-mediated spread, UV cutoff analog (finite context window, finite embedding dimension). The clumping mechanism that models mass in K6/QS3 applies to neural networks; a different Green's function is required, derived from the network substrate geometry.</li>
+  <li><strong>Open question:</strong> whether Anthropic or other labs have characterized how topology affects training or inference at the structural level. Current interpretability work uses functional metrics (loss, activation patching) not structural ones.</li>
+</ul>
+
+<div class="note"><strong>Deferred task:</strong> Formal treatment of linguistic layers (phonology → morphology → syntax → semantics → pragmatics) in the language of Galois symmetry towers and Hopf algebras. Each layer is a fixed-point subspace under a subgroup of 𝒜-actions. Semantics correcting syntax = 𝒟 acting on a collapsed syntax state, re-expanding it via the tensor product. Shortest-path + coset argument restores strict Hopf structure. To be written at next session.</div>
+
 <footer>
-  K6/QS3 Research Program &nbsp;|&nbsp; Context v2 — Narrowed Scope &nbsp;|&nbsp; April 2026 &nbsp;|&nbsp; DRAFT
+  K6/QS3 Research Program &nbsp;|&nbsp; Context v3 — Narrowed Scope + April 2026 Session &nbsp;|&nbsp; DRAFT
 </footer>
 
 </body>
